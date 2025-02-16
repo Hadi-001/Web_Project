@@ -1,0 +1,203 @@
+/* ============================================= */
+/*                Reset Styles                 */
+/* ============================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* ============================================= */
+/*                Global Styles                  */
+/* ============================================= */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #ffffff; /* soft blue background */
+    color: #000000;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+  
+a {
+    text-decoration: none;
+    color: inherit;
+}
+/* ============================================= */
+/*             End of Global Styles              */
+/* ============================================= */
+
+
+
+
+/* ============================================= */
+/*                Header Section                 */
+/* ============================================= */
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: #a4eaf4;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    /*z-index: 1000;*/
+    transition: background 0.3s ease;
+}
+.header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #010101;
+    transition: transform 0.3s ease;
+}
+
+/* here this is used for scalability */
+.menu-toggle {
+    font-size: 1.5rem;
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+.menu-toggle:hover {
+    transform: scale(1.1);
+}
+
+/* ============================================= */
+/*            End of Header Section              */
+/* ============================================= */
+
+
+
+
+/* ============================================= */
+/*                Navigation Menu                */
+/* ============================================= */
+nav ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+}
+  
+nav ul li {
+    position: relative;
+    margin: 0 15px;
+}
+
+/* This is the style of the hyperlinks in the navigation menu */
+nav ul li a {
+    padding: 10px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+nav ul li a:hover{
+    color: white;
+}
+
+nav ul.dropdown li a:hover {
+    color:rgb(67, 210, 254);
+}
+  
+/* Dropdown Styles */
+/* If the section have sub sections then this format is used */
+.has-dropdown .dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #fff;
+    border: 1px solid #eaeaea;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    min-width: 300px;
+    border-radius: 4px;
+    overflow: hidden;
+    z-index: 1000;
+}
+  
+.has-dropdown:hover .dropdown {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.dropdown li a {
+    padding: 10px 15px;
+}
+
+/* ============================================= */
+/*            End of Navigation Menu             */
+/* ============================================= */
+
+
+
+
+
+/* ============================================= */
+/*                 Icon Effects                  */
+/* ============================================= */
+.icon {
+    width: 24px;
+    height: 24px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+  
+.icon:hover {
+    transform: scale(1.2);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* ============================================= */
+/*              End of Icon Effects              */
+/* ============================================= */
+
+
+
+
+
+/* ============================================= */
+/*                 Footer Section                */
+/* ============================================= */
+footer {
+    background: #fff;
+    padding: 20px;
+    text-align: center;
+    border-top: 1px solid #eaeaea;
+}
+  
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+  
+.footer-menu {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 10px;
+}
+  
+.footer-menu li a {
+    font-size: 0.9rem;
+    color: #333;
+    transition: color 0.3s ease;
+}
+  
+.footer-menu li a:hover {
+    color: #009688;
+}
+
+/* ============================================= */
+/*            End of Footer Section              */
+/* ============================================= */
