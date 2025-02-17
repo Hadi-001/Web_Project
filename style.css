@@ -34,7 +34,7 @@ a {
 /*                Header Section                 */
 /* ============================================= */
 header {
-    position: fixed;
+    position: sticky;
     top: 0;
     width: 100%;
     background: #a4eaf4;
