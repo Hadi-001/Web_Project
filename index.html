@@ -1,72 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Mindful Journaling - Home</title>
-    <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Mindful Journaling - Login</title>
 </head>
-<body>
-    <!-- Header common in all pages -->
-    <header>
-    <!-- Header Container (div) -->
-    <!-- Content of this header should be changed-->
-    <div class="header-container">
-
-        <!--Here Mindful Journaling is a link that takes us to index.html-->
-        <a href="index.html" class="logo">Mindful Journaling</a>
-        
-        <!--    CHECK     -->
-        <button class="menu-toggle" id="menu-toggle">&#9776;</button>
-      
-        <!-- This is the navigation bar-->
-        <nav>
-
-            <!-- Unordered list that contains the links to other pages -->
-            <ul id="main-menu">
-                <li><a href="index.html">Home</a></li>
-
-                
-                <li class="has-dropdown">
-                    <a href="about.html">About</a>
-                    <!-- When the cursor is on the "About" link a drop menu appears that contain links to other pages -->
-                    <ul class="dropdown">
-                        <!-- This is the dropdown menu-->
-                        <li><a href="team.html">Our Team</a></li>
-                        <li><a href="mission.html">Our Mission</a></li>
-                    </ul>
-                </li>
-
-                <li class="has-dropdown">
-                    <a href="daily-prompts.html">Journals</a>
-                    <ul class="dropdown">
-                        <li><a href="daily-prompts.html">Daily Prompts</a></li>
-                        <li><a href="weekly-prompts.html">Weekly Check-Ins</a></li>
-                    </ul>
-                </li>
-
-                <li><a href="mood-tracker.html">Mood Tracker</a></li>
-
-                <li class="has-dropdown">
-                    <a href="resources.html">Resources</a>
-                    <ul class="dropdown">
-                        <li><a href="resources.html">Articles</a></li>
-                        <li><a href="tools.html">Tools &amp; Apps</a></li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="contact.html">
-                        <img src="images/contact-icon.png" alt="Contact" class="icon" />
-                    </a>
-                </li>
-            </ul>
-        </nav>
-    </div>
-    </header>
-
-    <!-- Main Content goes here-->
-    <main>
-        
+<body class="login-body">
+    <main class="login-main">     
+        <div class="login-container">
+            <form class="login-form" action="home.html" method="post">
+                <h1>Sign in</h1>
+                <div class="input-feild">
+                <label for="username">Username</label>
+                <input class="login-input" placeholder="Username" type="text" id="username" name="username" required>
+                </div>
+            
+                <div class="input-feild">
+                <label for="password">Password</label>
+                <input class="login-input" placeholder="Password" type="text" id="password" name="passwrod" required>
+                </div>
+                <button class="login-button" type="Sign in">Submit</button>
+            </form>
+            <div class="login-right-container">
+                    <h1>Welcome to login</h1>
+                    <h3>Don't have an account?</h3>
+                    <button class="signup-button">Sign up</button>
+            </div>
+        </div>   
     </main>
 
     <!-- Footer -->
