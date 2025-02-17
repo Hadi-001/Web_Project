@@ -162,6 +162,32 @@ nav ul.dropdown li a:hover {
 /* ============================================= */
 
 
+/* ============================================= */
+/*            Page Content Section               */
+/* ============================================= */
+.page-content {
+    padding: 60px 30px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.page-content h1 {
+    margin-top: 20px;
+    font-size: 2.2rem;
+    margin-bottom: 20px;
+}
+  
+.page-content p,
+.page-content li, 
+.page-content ol, 
+.page-content ul {
+    margin-bottom: 25px;
+    font-size: 1rem;
+}
+
+/* ============================================= */
+/*         End of Page Content Section           */
+/* ============================================= */
 
 
 
