@@ -30,6 +30,13 @@ a {
     text-decoration: none;
     color: inherit;
 }
+
+.email-link-style {
+    text-decoration: underline;
+}
+.email-link-style:hover {
+    color: blue;
+}
 /* ============================================= */
 /*             End of Global Styles              */
 /* ============================================= */
@@ -168,6 +175,78 @@ nav ul.dropdown li a:hover {
 /*              End of Icon Effects              */
 /* ============================================= */
 
+
+/* ============================================= */
+/*            Privacy & terms Section            */
+/* ============================================= */
+.page-content {
+    padding: 60px 30px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.page-content h1 {
+    margin-top: 20px;
+    font-size: 2.2rem;
+    margin-bottom: 20px;
+}
+  
+.page-content p,
+.page-content li, 
+.page-content ol, 
+.page-content ul {
+    margin-bottom: 25px;
+    font-size: 1rem;
+}
+
+/* ============================================= */
+/*         End of Privacy & terms Section        */
+/* ============================================= */
+
+
+
+/* ============================================= */
+/*                  FAQ Section                  */
+/* ============================================= */
+
+/* faq stands for frequently asked questions */
+.faq h1 {
+    font-size: 2.2rem;
+    margin-bottom: 15px;
+}
+.faq {
+    margin: 0 auto;
+    max-width: 55%;
+    padding:  60px 30px;
+}
+
+.faq-item {
+    margin-bottom: 15px;
+}
+.faq-answer, .faq-question {
+    font-size: 1.2em;
+}
+.faq-answer {
+    /*When loaded the answer will be hidden from the user */ 
+    display: none;
+}
+
+.faq-question {
+    background: #009688;
+    border: none;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+    display: block;
+    width: 100%;
+    text-align: left;
+    padding: 10px;
+    /* border-bottom: 1px solid #992d2d; */
+}
+
+/* ============================================= */
+/*              End of FAQ Section               */
+/* ============================================= */
 
 
 
