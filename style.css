@@ -313,3 +313,26 @@ input::placeholder{
 /* ============================================= */
 /*            End of sign in Section             */
 /* ============================================= */
+
+
+
+
+
+
+/* ============================================= */
+/*               Sign up Section                 */
+/* ============================================= */
+
+
+.signup-body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to right, white, #ebe8e8);
+}
+
+
+/* ============================================= */
+/*            End of sign up Section             */
+/* ============================================= */
