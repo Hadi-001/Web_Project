@@ -401,108 +401,26 @@ input::placeholder{
 /* ============================================= */
 
 
+
+
+
+
 /* ============================================= */
-/*               Sign in Section                 */
+/*               Sign up Section                 */
 /* ============================================= */
 
 
-.login-body{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: linear-gradient(to right, white, #d6d5d5);
-}
-
-.login-container, .login-main{
-    min-width: 300px;
-    min-height: 290px;
-    width: 55vw;
-    height: 50vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.login-container{
-    box-shadow: -3px 3px 20px grey;
-    flex: auto;
-}
-
-.login-form, .login-right-container{
-    height: 100%;
+.signup-body{
     display: flex;
     flex-direction: column;
-    align-items: center;
-    
-}
-
-.login-form{
-    justify-content: space-evenly;
-    width: 45%;
-    align-items:first baseline;
-    padding: 2%;
-    background-color: white;
-    
-}
-
-label{
-    display:block;
-}
-
-.login-input{
-    font-size: large;
-    height: 2.5rem;
-    border-radius: 5rem;
-    border-style: none;
-    background-color:#eaeaea;
-}
-
-input::placeholder{
-    color: grey;
-}
-
-.login-button, .input-feild, .login-input{
-    width:100%;
-}
-
-.login-button{
-    height: 2.5rem;
-    border-radius: 5rem;
-    border-style: none;
-    color: white;
-    font-weight: 1000;
-    background-color: rgb(102, 179, 223);
-}
-
-.login-input{
-    padding: 0.5rem;
-}
-
-
-
-.login-right-container{
     justify-content: center;
-    gap: 20px;
-
-    color: white;
-    width: 55%;
-    background-color: rgb(102, 179, 223);
-    padding: 5%;
-    
-}
-
-.signup-button{
-    padding: 0.75rem;
-    border-radius: 5rem;
-    border: white solid 1px;
-    background-color: rgb(102, 179, 223);
-    color: white;
-    font-weight: 1000;
+    align-items: center;
+    background: linear-gradient(to right, white, #ebe8e8);
 }
 
 
 /* ============================================= */
-/*            End of sign in Section             */
+/*            End of sign up Section             */
 /* ============================================= */
 
 
