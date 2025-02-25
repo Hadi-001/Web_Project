@@ -55,7 +55,7 @@
                         </ul>
                     </li>
                     <li>
-                        <a href="contact.html">
+                        <a href="contactUS.html">
                             <img src="images/contact-icon.png" alt="Contact" class="icon" />
                         </a>
                     </li>
@@ -64,6 +64,54 @@
         </div>
         </header>
 
+        <!--This section contains the contactUS info/form-->
+        <section class="contact-section">
+            <h2>Contact Us</h2>
+            <p>Have questions? Feel free to reach out to us!</p>
+    
+            <!-- This div is a flex box used for scalability (to wrap content)-->
+
+            <div class="contact-container">
+
+                <!-- Contact Form -->
+                <form action="#" method="POST" class="contact-form">
+
+                    <!--Take the name of the user-->
+                    <div class="input-group">
+                        <label for="name">Name</label>
+                        <input placeholder="Enter your name" type="text" id="name" name="name" required>
+                    </div>
+
+                    <!--Take the email of the user -->
+                    <div class="input-group">
+                        <label for="email">Email</label>
+                        <input placeholder="Enter your email" type="email" id="email" name="email" required>
+                    </div>
+
+                    <!--Take the message from the user -->
+                    <div class="input-group">
+                        <label for="message">Message</label>
+                        <textarea placeholder="Type your message..." id="message" name="message" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn-contact-us">Send Message</button>
+                </form>
+    
+                <!-- Contact Info -->
+                <div class="contact-info">
+                    <h3>Get in Touch</h3>
+                    <p>Email: <a class="email-link-style" href="mailto:mindfuljournaling@gmail.com">mindfuljournaling@gmail.com</a></p>
+                    <p>Phone: +961 81818181</p>
+                    <p>Address: 123 Mindful Street, Wellness City</p>
+    
+                    <div class="social-icons">
+                        <a href="#"><img src="Images/facebook-icon.png" alt="Facebook"></a>
+                        <a href="#"><img src="Images/instagram-icon.png" alt="Instagram"></a>
+                        <a href="#"><img src="Images/X-icon.png" alt="X"></a>
+                        
+                    </div>
+                </div>
+            </div>
+        </section>
         <footer>
             <div class="footer-container">
                 <!-- Copy Right -->
