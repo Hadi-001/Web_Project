@@ -624,14 +624,14 @@ footer {
 /* ============================================= */
 
 
-.login-body{
+.login-body {
     display: flex;
     justify-content: center;
     align-items: center;
     background: linear-gradient(to right, white, #d6d5d5);
 }
 
-.login-container, .login-main{
+.login-container, .login-main {
     min-width: 300px;
     min-height: 290px;
     width: 55vw;
@@ -641,12 +641,12 @@ footer {
     align-items: center;
 }
 
-.login-container{
+.login-container {
     box-shadow: -3px 3px 20px grey;
     flex: auto;
 }
 
-.login-form, .login-right-container{
+.login-form, .login-right-container {
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -654,7 +654,7 @@ footer {
     
 }
 
-.login-form{
+.login-form {
     justify-content: space-evenly;
     width: 45%;
     align-items:first baseline;
@@ -663,11 +663,11 @@ footer {
     
 }
 
-label{
+label {
     display:block;
 }
 
-.login-input{
+.login-input {
     font-size: large;
     height: 2.5rem;
     border-radius: 5rem;
@@ -675,15 +675,15 @@ label{
     background-color:#eaeaea;
 }
 
-input::placeholder{
+input::placeholder {
     color: grey;
 }
 
-.login-button, .input-feild, .login-input{
+.login-button, .input-feild, .login-input {
     width:100%;
 }
 
-.login-button{
+.login-button {
     height: 2.5rem;
     border-radius: 5rem;
     border-style: none;
@@ -692,13 +692,13 @@ input::placeholder{
     background-color: rgb(102, 179, 223);
 }
 
-.login-input{
+.login-input {
     padding: 0.5rem;
 }
 
 
 
-.login-right-container{
+.login-right-container {
     justify-content: center;
     gap: 20px;
 
@@ -829,5 +829,127 @@ input::placeholder{
 
 /* ============================================= */
 /*             End of Articles Section           */
+/* ============================================= */
+
+
+
+/* ============================================= */
+/*                Contact Section                */
+/* ============================================= */
+
+.contact-section {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #f9f9f9;
+}
+
+.contact-section h2 {
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+/* Text on the page */
+.contact-section p {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 30px;
+}
+
+/* Contact Container that contains the form and contact info */
+.contact-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+/* Contact Form */
+.contact-form {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 350px;
+
+}
+
+.input-group {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.input-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.input-group input, 
+.input-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    resize: vertical;
+}
+
+/* Submit Button */
+.btn-contact-us {
+    display: inline-block;
+    background-color: #6c63ff;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    font-size: 16px;
+}
+
+.btn-contact-us:hover {
+    background-color: #5752d1;
+}
+
+/* Contact Info */
+.contact-info {
+    text-align: left;
+    max-width: 300px;
+}
+
+.contact-info h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.contact-info p {
+    font-size: 14px;
+    color: #444;
+    margin-bottom: 8px;
+}
+
+/* Social Media Icons */
+.social-icons {
+    margin-top: 15px;
+}
+
+.social-icons a {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.social-icons img {
+    width: 40px;
+    height: 40px;
+    transition: transform 0.3s;
+}
+
+.social-icons img:hover {
+    transform: scale(1.1);
+}
+
+
+/* ============================================= */
+/*              End of Contact Section           */
 /* ============================================= */
 
