@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-container">
+            <a href="Home.html" class="logo">Mindful Journaling</a>
+            <button class="menu-toggle" id="menu-toggle">&#9776;</button>
+            <nav>
+                <ul id="main-menu">
+                    <li><a href="Home.html">Home</a></li>
+                    <li><a href="AboutUs.html">About</a></li>
+                    <li class="has-dropdown">
+                        <a href="daily-prompts.html">Journals</a>
+                        <ul class="dropdown">
+                            <li><a href="daily-prompts.html">Daily Prompts</a></li>
+                            <li><a href="weekly-prompts.html">Weekly Check-Ins</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="mood-tracker.html">Mood Tracker</a></li>
+                    <li class="has-dropdown">
+                        <a href="articles.html">Resources</a>
+                        <ul class="dropdown">
+                            <li><a href="articles.html">Articles</a></li>
+                            <li><a href="tools.html">Tools &amp; Apps</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="contactUS.html">
+                            <img src="images/contact-icon.png" alt="Contact" class="icon" />
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <!-- Profile and Chart Section -->
+    <div class="profile-and-charts-container">
+        <!-- Profile Section -->
+        <div class="profile-container">
+            <img src="Images/anonymous-user.png" alt="">
+            <h2>User Profile</h2>
+            <div class="profile-details">
+                <p><strong>Name:</strong> <span id="userName">John Doe</span></p>
+                <p><strong>Username:</strong> <span id="userUsername">johndoe123</span></p>
+                <p><strong>Email:</strong> <span id="userEmail">johndoe@example.com</span></p>
+
+                <!-- Password Change -->
+                <form id="passwordForm">
+                    <label for="oldPassword">Current Password:</label>
+                    <input type="password" id="oldPassword" placeholder="Enter current password" required>
+
+                    <label for="newPassword">New Password:</label>
+                    <input type="password" id="newPassword" placeholder="Enter new password" required>
+
+                    <label for="newPassword">Confirm Password:</label>
+                    <input type="password" id="ConfirmnewPassword" placeholder="Confirm new password" required>
+
+                    <button class="btn-contact-us" type="submit">Update Password</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Chart Section -->
+        <div class="charts-container">
+            <div class="chart-container">
+                <canvas id="myChart"></canvas>
+            </div>
+
+            <div class="chart-container">
+                <canvas id="secondChart"></canvas>
+            </div>
+
+            <div class="chart-container">
+                <canvas id="thirdChart"></canvas>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <p>&copy; 2025 Mindful Journaling. All rights reserved.</p>
+            <ul class="footer-menu">
+                <li><a href="privacy&terms.html">Privacy &amp; Terms</a></li>
+                <li><a href="FAQ.html">FAQ</a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <!-- This scripting is for the charts -->
+    <script>
+        // First Chart (Mood Level)
+        const ctx1 = document.getElementById('myChart').getContext('2d');
+        new Chart(ctx1, {
+            type: 'line',
+            data: {
+                labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+                datasets: [{
+                    label: 'Mood Level',
+                    data: [3, 4, 5, 3, 4, 6, 5],
+                    borderColor: 'blue',
+                    borderWidth: 2
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    y: { beginAtZero: true }
+                }
+            }
+        });
+
+        // Second Chart (Activity Level)
+        const ctx2 = document.getElementById('secondChart').getContext('2d');
+        new Chart(ctx2, {
+            type: 'bar',
+            data: {
+                labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+                datasets: [{
+                    label: 'Activity Level',
+                    data: [2, 3, 4, 2, 5, 6, 7],
+                    backgroundColor: 'green',
+                    borderWidth: 2
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    y: { beginAtZero: true }
+                }
+            }
+        });
+
+        // Third Chart (Sleep Hours)
+        const ctx3 = document.getElementById('thirdChart').getContext('2d');
+        new Chart(ctx3, {
+            type: 'radar',
+            data: {
+                labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+                datasets: [{
+                    label: 'Sleep Hours',
+                    data: [7, 6, 8, 5, 7, 6, 8],
+                    borderColor: 'purple',
+                    borderWidth: 2,
+                    fill: true,
+                    backgroundColor: 'rgba(128,0,128,0.2)'
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false
+            }
+        });
+    </script>
+
+</body>
+</html>
