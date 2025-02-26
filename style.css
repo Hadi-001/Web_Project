@@ -47,7 +47,7 @@ a {
 /* ============================================= */
 /*                Header Section                 */
 /* ============================================= */
-header {
+/* header {
     position: sticky;
     top: 0;
     width: 100%;
@@ -69,10 +69,10 @@ header {
     font-weight: bold;
     color: #010101;
     transition: transform 0.3s ease;
-}
+} */
 
 /* here this is used for scalability */
-.menu-toggle {
+/* .menu-toggle {
     font-size: 1.5rem;
     display: none;
     background: none;
@@ -82,7 +82,20 @@ header {
 }
 .menu-toggle:hover {
     transform: scale(1.1);
+}  */
+
+.navbar-expand-lg, .dropdown-menu{
+    background-color: #a4eaf4;
 }
+
+.navbar-expand-lg{
+    min-height:80px;
+}
+
+.nav-gap{
+    min-width: 15%;
+}
+
 
 /* ============================================= */
 /*            End of Header Section              */
