@@ -1102,9 +1102,73 @@ input[type="radio"]:checked + .custom-radio-label {
     height: 300px; 
 }
 
-
-
 /* ============================================= */
 /*              End of Profile Section           */
 /* ============================================= */
+
+
+/* ============================================= */
+/*         Stress Recommendation Section         */
+/* ============================================= */
+
+.stress-body {
+    font-family: Arial, sans-serif;
+    background-color: #f1f7f5;
+    color: #333;
+    text-align: center;
+}
+
+.stress-container {
+    max-width: 600px;
+    margin: auto;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    margin: 40px auto 100px auto;
+}
+
+.stress-container h2 {
+    color: #4CAF50;
+}
+.quote-box {
+    font-style: italic;
+    background: #eafaf1;
+    padding: 15px;
+    margin-top: 15px;
+    border-radius: 5px;
+}
+.activity {
+    margin-top: 20px;
+    padding: 10px;
+    border-radius: 8px;
+    background: #dff9fb;
+}
+.tips {
+    text-align: left;
+    background: #fff3cd;
+    padding: 15px;
+    border-radius: 5px;
+    margin-top: 15px;
+    
+}
+.tips-elements {
+    margin-left: 10px;
+}
+.stress-container button {
+    width: auto;
+    padding: 10px 15px;
+    margin-top: 10px;  
+}
+#breathing-timer {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #1b52ea;
+    margin-top: 5px;
+}
+
+/* ============================================= */
+/*      End of Stress Recommendation Section     */
+/* ============================================= */
+
 
