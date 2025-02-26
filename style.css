@@ -1108,17 +1108,18 @@ input[type="radio"]:checked + .custom-radio-label {
 
 
 /* ============================================= */
-/*         Stress Recommendation Section         */
+/*            Recommendation Section             */
 /* ============================================= */
 
-.stress-body {
+.stress-body, .anxiety-body, .depression-body {
     font-family: Arial, sans-serif;
     background-color: #f1f7f5;
     color: #333;
     text-align: center;
+    font-size: 18px;
 }
 
-.stress-container {
+.stress-container, .anxiety-container, .depression-container {
     max-width: 600px;
     margin: auto;
     background: white;
@@ -1155,7 +1156,7 @@ input[type="radio"]:checked + .custom-radio-label {
 .tips-elements {
     margin-left: 10px;
 }
-.stress-container button {
+.stress-container button,.anxiety-container button, .depression-container button {
     width: auto;
     padding: 10px 15px;
     margin-top: 10px;  
@@ -1166,9 +1167,10 @@ input[type="radio"]:checked + .custom-radio-label {
     color: #1b52ea;
     margin-top: 5px;
 }
-
+.activity ul {
+    margin-left: 15px;
+    text-align: left;
+}
 /* ============================================= */
-/*      End of Stress Recommendation Section     */
+/*          End of Recommendation Section        */
 /* ============================================= */
-
-
