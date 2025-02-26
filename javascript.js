@@ -11,12 +11,65 @@ document.querySelectorAll(".faq-question").forEach(button => {
 
 
 
+
+// ============================================= */
+//          stressRecommendation Section         */
+// ============================================= */
+
+const breath_button = document.getElementById("breathing-exercise-btn");
+if (breath_button)
+    breath_button.addEventListener('click',startBreathingExercise);
+
+
+function startBreathingExercise() {
+    breath_button.disabled = true;
+    let instruction = document.getElementById("breathing-instructions");
+    let timer = document.getElementById("breathing-timer");
+    let phases = [
+        { text: "Inhale deeply...", duration: 4 },
+        { text: "Hold your breath...", duration: 4 },
+        { text: "Exhale slowly...", duration: 6 }
+    ];
+
+    let phaseIndex = 0;
+    function updatePhase() {
+        if (phaseIndex >= phases.length) {
+            instruction.innerText = "Great job! Repeat if needed.";
+            timer.innerText = "";
+            breath_button.disabled = false;
+            return;
+
+        }
+
+        let phase = phases[phaseIndex];
+        instruction.innerText = phase.text;
+
+        let countdown = phase.duration;
+        timer.innerText = countdown; // Start countdown
+
+        let interval = setInterval(() => {
+            countdown--;
+            timer.innerText = countdown;
+            if (countdown <= 0) {
+                clearInterval(interval);
+                phaseIndex++;
+                updatePhase(); // Move to next phase
+            }
+        }, 1000); // each iteration is done when 1 second passes
+    }
+
+    updatePhase(); // Start first phase
+}
+
+
+// ============================================= */
+//       End of stressRecommendation Section     */
+// ============================================= */
+
+
 // ============================================= //
 //                Tests Section                  //
 // ============================================= //
-
-
-
 
 let depressionTest = {
     questions : [
@@ -74,6 +127,7 @@ let currentTest;
 const questionText = document.getElementById("question-text");
 const prevButton = document.getElementById("prev-button");
 const nextButton = document.getElementById("next-button");
+const discardButton = document.getElementById("discard-button");
 const radioButtons = document.querySelectorAll('input[name="test-option"]');
 
 function updateQuestion() {
@@ -103,33 +157,36 @@ radioButtons.forEach((radio) => {
     });
 });
 
-nextButton.addEventListener("click", () => {
-    const selected = document.querySelector('input[name="test-option"]:checked');
-    if (selected) {
-        currentTest.scores[currentTest.currentQuestionIndex] = parseInt(selected.value);
-        if (currentTest.currentQuestionIndex < currentTest.questions.length - 1) {
-            currentTest.currentQuestionIndex++;
+if (nextButton)
+    nextButton.addEventListener("click", () => {
+        const selected = document.querySelector('input[name="test-option"]:checked');
+        if (selected) {
+            currentTest.scores[currentTest.currentQuestionIndex] = parseInt(selected.value);
+            if (currentTest.currentQuestionIndex < currentTest.questions.length - 1) {
+                currentTest.currentQuestionIndex++;
+                updateQuestion();
+                updateProgress();
+            } else {
+                displayResult();
+            }
+        }
+});
+
+if (prevButton)
+    prevButton.addEventListener("click", () => {
+        if (currentTest.currentQuestionIndex > 0) {
+            currentTest.currentQuestionIndex--;
             updateQuestion();
             updateProgress();
-        } else {
-            displayResult();
         }
-    }
 });
 
-prevButton.addEventListener("click", () => {
-    if (currentTest.currentQuestionIndex > 0) {
-        currentTest.currentQuestionIndex--;
-        updateQuestion();
-        updateProgress();
-    }
-});
-
-document.getElementById("discard-button").addEventListener("click", () => {
-    currentTest.scores = [];
-    currentTest.currentQuestionIndex = 0;
-    window.location.href = "Home.html";
-});
+if(discardButton)
+    discardButton.addEventListener("click", () => {
+        currentTest.scores = [];
+        currentTest.currentQuestionIndex = 0;
+        window.location.href = "Home.html";
+    });
 
 
 const page = document.title.toLowerCase();
@@ -137,9 +194,8 @@ if (page.includes("depression")) currentTest = depressionTest;
 if (page.includes("anxiety")) currentTest = anxietyTest;
 if (page.includes("stress")) currentTest = stressTest;
 
-updateQuestion();
-
+if (questionText)updateQuestion();
 
 // ============================================= */
-//                End of Tests Section           */
+//             End of test Section               */
 // ============================================= */
