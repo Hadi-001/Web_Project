@@ -1111,6 +1111,8 @@ input[type="radio"]:checked + .custom-radio-label {
 /*            Recommendation Section             */
 /* ============================================= */
 
+
+/*These 3 classes will have the same format*/
 .stress-body, .anxiety-body, .depression-body {
     font-family: Arial, sans-serif;
     background-color: #f1f7f5;
@@ -1118,7 +1120,7 @@ input[type="radio"]:checked + .custom-radio-label {
     text-align: center;
     font-size: 18px;
 }
-
+/*These 3 classes will have the same format*/
 .stress-container, .anxiety-container, .depression-container {
     max-width: 600px;
     margin: auto;
@@ -1156,6 +1158,11 @@ input[type="radio"]:checked + .custom-radio-label {
 .tips-elements {
     margin-left: 10px;
 }
+
+/* Here every element that has class 
+stress-container, anxiety-container or depression-container 
+and a button inside it this format will occur
+*/
 .stress-container button,.anxiety-container button, .depression-container button {
     width: auto;
     padding: 10px 15px;
