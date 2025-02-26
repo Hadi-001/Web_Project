@@ -43,46 +43,9 @@ a {
 
 
 
-
 /* ============================================= */
 /*                Header Section                 */
 /* ============================================= */
-/* header {
-    position: sticky;
-    top: 0;
-    width: 100%;
-    background: #a4eaf4;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    z-index: 1000;
-    transition: background 0.3s ease;
-}
-.header-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px 20px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-.logo {
-    font-size: 1.8rem;
-    font-weight: bold;
-    color: #010101;
-    transition: transform 0.3s ease;
-} */
-
-/* here this is used for scalability */
-/* .menu-toggle {
-    font-size: 1.5rem;
-    display: none;
-    background: none;
-    border: none;
-    cursor: pointer;
-    transition: transform 0.3s ease;
-}
-.menu-toggle:hover {
-    transform: scale(1.1);
-}  */
 
 .navbar-expand-lg, .dropdown-menu{
     background-color: #a4eaf4;
