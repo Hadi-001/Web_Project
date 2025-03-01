@@ -199,3 +199,103 @@ if (questionText)updateQuestion();
 // ============================================= */
 //             End of test Section               */
 // ============================================= */
+
+
+
+// ============================================= */
+//               Sign up Section                 */
+// ============================================= */
+
+
+const firstNameInput = document.getElementById('signup-first-name');
+const lastNameInput = document.getElementById('signup-last-name');
+const usernameInput = document.getElementById('signup-username');
+const emailInput = document.getElementById('signup-email');
+const passwordInput = document.getElementById('signup-password');
+const confirmPasswordInput = document.getElementById('signup-confirm-password');
+const dignupSubmitButton = document.getElementById()
+
+function confirmPassword(){
+    if(passwordInput.value === confirmPasswordInput.value){
+        confirmPasswordInput.classList.remove('is-invalid');
+        confirmPasswordInput.classList.add('is-valid');
+    } else {
+        confirmPasswordInput.classList.add('is-invalid');
+        confirmPasswordInput.classList.remove('is-valid');
+    }
+}
+
+if (firstNameInput) 
+    firstNameInput.addEventListener('input', function(event) {
+        const content = event.target.value;
+
+        if (/^[a-zA-Z]+$/.test(content)) {
+            firstNameInput.classList.remove('is-invalid');
+            firstNameInput.classList.add('is-valid');
+        } else {
+            firstNameInput.classList.add('is-invalid');
+            firstNameInput.classList.remove('is-valid');
+        }
+    });
+
+if (lastNameInput) 
+    lastNameInput.addEventListener('input', function(event) {
+        const content = event.target.value;
+
+        if (/^[a-zA-Z]+$/.test(content)) {
+            lastNameInput.classList.remove('is-invalid');
+            lastNameInput.classList.add('is-valid');
+        } else {
+            lastNameInput.classList.add('is-invalid');
+            lastNameInput.classList.remove('is-valid');
+        }
+    });
+
+if(usernameInput)
+    usernameInput.addEventListener('input',function(event){
+        const content = event.target.value;
+        if(content.length > 0){
+            usernameInput.classList.remove('is-invalid');
+            usernameInput.classList.add('is-valid');
+        } else {
+            usernameInput.classList.add('is-invalid');
+            usernameInput.classList.remove('is-valid');
+        }
+    });
+
+if(emailInput)
+    emailInput.addEventListener('input',function(event){
+        const content = event.target.value;
+        if(/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(content)){
+            emailInput.classList.remove('is-invalid');
+            emailInput.classList.add('is-valid');
+        } else {
+            emailInput.classList.add('is-invalid');
+            emailInput.classList.remove('is-valid');
+        }
+});
+
+if(passwordInput)
+    passwordInput.addEventListener('input',function(event){
+        const content = event.target.value;
+        if(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).{8,}$/.test(content)){
+            passwordInput.classList.remove('is-invalid');
+            passwordInput.classList.add('is-valid');
+        } else {
+            passwordInput.classList.add('is-invalid');
+            passwordInput.classList.remove('is-valid');
+        }
+        confirmPassword();
+});
+
+if(confirmPassword)
+    confirmPasswordInput.addEventListener('input',function(event){
+        confirmPassword();
+});
+
+
+
+
+// ============================================= */
+//            End of Sign up Section             */
+// ============================================= */
