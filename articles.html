@@ -13,63 +13,64 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-     <!-- Header common in all pages -->
-     <header>
-        <!-- Header Container (div) -->
-        <!-- Content of this header should be changed-->
-        <div class="header-container">
+<!-- Header common in all pages -->
+<header>
+    <!-- Header Container (div) -->
+    <!-- Content of this header should be changed-->
+    <div class="header-container">
+
+        <nav class="navbar navbar-expand-lg">
+            <div class="container-fluid">
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+                <a class="navbar-brand" href="#">Mindful Journaling</a>
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+                    <li class="nav-item">
+                    <a class="nav-link" href="Home.html">Home</a>
+                    </li>
+
+                    <li class="nav-item">
+                    <a class="nav-link" href="articles.html">Articles</a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a class="nav-link" href="Disease.html">Diseases</a>
+                    </li>
+                    
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle text-center" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Recommendations
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="depressionRecommendation.html">Depression recommendations</a></li>
+                            <li><a class="dropdown-item" href="anxietyRecommendation.html">Anxiety recommendations</a></li>
+                            <li><a class="dropdown-item" href="stressRecommendation.html">Stress recommendations</a></li>
+                        </ul>   
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a class="nav-link" href="AboutUs.html">About us</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="contactUS.html">Contact us</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="FAQ.html">FAQ</a>
+                    </li>
+
+                </ul>
+               
+              </div>
+            </div>
+          </nav>
+    </div>
+    </header>
     
-            <nav class="navbar navbar-expand-lg">
-                <div class="container-fluid">
-                  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                  </button>
-                  <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-                    <a class="navbar-brand" href="#">Mindful Journaling</a>
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-
-                        <li class="nav-item">
-                        <a class="nav-link" href="Home.html">Home</a>
-                        </li>
-
-                        <li class="nav-item">
-                        <a class="nav-link" href="articles.html">Articles</a>
-                        </li>
-                        
-                        <li class="nav-item">
-                            <a class="nav-link" href="Disease.html">Diseases</a>
-                        </li>
-                        
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle text-center" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                Recommendations
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="depressionRecommendation.html">Depression recommendations</a></li>
-                                <li><a class="dropdown-item" href="anxietyRecommendation.html">Anxiety recommendations</a></li>
-                                <li><a class="dropdown-item" href="stressRecommendation.html">Stress recommendations</a></li>
-                            </ul>   
-                        </li>
-                        
-                        <li class="nav-item">
-                            <a class="nav-link" href="AboutUs.html">About us</a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link" href="contactUS.html">Contact us</a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link" href="FAQ.html">FAQ</a>
-                        </li>
-
-                    </ul>
-                   
-                  </div>
-                </div>
-              </nav>
-        </div>
-        </header>
 
         <!-- This section contains some articles about mental health -->
         <section class="articles-section">
@@ -123,15 +124,16 @@
             </div>
         </footer>
         
+        <script src="javascript.js"></script>
         <script
-    src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
-    integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
-    crossorigin="anonymous"
-    ></script>
-    <script
-    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
-    integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
-    crossorigin="anonymous"
-    ></script>
+          src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+          integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+          crossorigin="anonymous"
+        ></script>
+        <script
+          src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
+          integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
+          crossorigin="anonymous"
+        ></script>
 </body>
 </html>
