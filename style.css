@@ -208,13 +208,10 @@ nav ul.dropdown li a:hover {
 /*  Tests Section     */
 /*  Tests Section     */
 
-
-.Tests {
 .Tests {
     padding: 4rem 2rem;
 }
 
-.Tests h2 {
 .Tests h2 {
     text-align: center;
     font-size: 2.5rem;
@@ -232,7 +229,7 @@ nav ul.dropdown li a:hover {
     margin: 0 auto;
 }
 
-.Test-card {
+
 .Test-card {
     background: var(--white);
     padding: 2rem;
@@ -241,24 +238,24 @@ nav ul.dropdown li a:hover {
     transition: transform 0.3s ease;
 }
 
-.Test-card:hover {
+
 .Test-card:hover {
     transform: translateY(-10px);
 }
 
-.Test-icon {
+
 .Test-icon {
     font-size: 2.5rem;
     margin-bottom: 1rem;
 }
 
-.Test-card h3 {
+
 .Test-card h3 {
     color: var(--primary-color);
     margin-bottom: 1rem;
 }
 
-.Test-link {
+
 .Test-link {
     display: inline-block;
     margin-top: 1rem;
