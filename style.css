@@ -1001,6 +1001,10 @@ input[type="radio"]:checked + .custom-radio-label {
     color: white;
     text-decoration: none;
 }
+.form-last-display-container {
+    align-items: center;
+    text-align: center;
+}
 
 @media screen and (max-width: 768px) {
     .navigation-buttons > button{
@@ -1167,7 +1171,7 @@ bellow format
 stress-container, anxiety-container or depression-container 
 and a button inside it this format will occur
 */
-.stress-container button,.anxiety-container button, .depression-container button {
+.stress-container button,.anxiety-container button, .depression-container button, #form-button {
     width: auto;
     padding: 10px 15px;
     margin-top: 10px;  

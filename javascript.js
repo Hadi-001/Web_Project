@@ -85,7 +85,14 @@ let depressionTest = {
     "Over the last week, How often have you found it difficult to carry out your daily activities?"
     ],
     currentQuestionIndex: 0,
-    scores:[]
+    scores:[],
+    resultMessage: function (score){
+        if (score >= 30)return "You have no depression";
+        else if (score >= 20) return "You have low depression";
+        else if (score >= 10) return "You have moderate depression";
+        else return "You have severe depression";
+    },
+    targetPage: "depressionRecommendation.html"
 };
 
 let anxietyTest = {
@@ -102,7 +109,15 @@ let anxietyTest = {
     "Over the last week, How often have you avoided places or situations because of anxiety?"
     ],
     currentQuestionIndex: 0,
-    scores:[]
+    scores:[],
+    resultMessage: function (score){
+        if (score >= 30)return "You have no anxiety";
+        else if (score >= 20) return "You have low anxiety";
+        else if (score >= 10) return "You have moderate anxiety";
+        else return "You have severe anxiety"
+    },
+    targetPage: "anxietyRecommendation.html"
+    
 };
 
 let stressTest = {
@@ -119,7 +134,14 @@ let stressTest = {
     "Over the last week, How often have you struggled to find time to relax?"
     ],
     currentQuestionIndex: 0,
-    scores:[]
+    scores:[],
+    resultMessage: function (score){
+        if (score >= 30)return "You have no stress";
+        else if (score >= 20) return "You have low stress";
+        else if (score >= 10) return "You have moderate stress";
+        else return "You have severe stress"
+    },
+    targetPage: "stressRecommendation.html"
 };
 
 let currentTest;
@@ -146,7 +168,9 @@ function updateProgress() {
 
 function displayResult() {
     const totalScore = currentTest.scores.reduce((acc, curr) => acc + curr, 0);
-    document.querySelector(".test-container").innerHTML = `<h3>Your total score is: ${totalScore}</h3>`;
+    document.querySelector(".test-container").innerHTML = `<div class="form-last-display-container"><h3>Your total score is: ${totalScore*2.5}/100</h3><br><h3>`+ currentTest.resultMessage(totalScore)+`</h3><br>
+    <a href="`+ currentTest.targetPage +`"><button class="btn-contact-us" id="form-button">Go to recommendations</button></a></div>
+`;
     document.querySelector(".navigation-buttons").remove();
 }
 
