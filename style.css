@@ -43,46 +43,9 @@ a {
 
 
 
-
 /* ============================================= */
 /*                Header Section                 */
 /* ============================================= */
-/* header {
-    position: sticky;
-    top: 0;
-    width: 100%;
-    background: #a4eaf4;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    z-index: 1000;
-    transition: background 0.3s ease;
-}
-.header-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px 20px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-.logo {
-    font-size: 1.8rem;
-    font-weight: bold;
-    color: #010101;
-    transition: transform 0.3s ease;
-} */
-
-/* here this is used for scalability */
-/* .menu-toggle {
-    font-size: 1.5rem;
-    display: none;
-    background: none;
-    border: none;
-    cursor: pointer;
-    transition: transform 0.3s ease;
-}
-.menu-toggle:hover {
-    transform: scale(1.1);
-}  */
 
 .navbar-expand-lg, .dropdown-menu{
     background-color: #a4eaf4;
@@ -351,31 +314,55 @@ nav ul.dropdown li a:hover {
     font-size: 0.9rem;
 }
 
+/* responsive adjustments*/
+@media (max-width: 590px) {
+
+    /* Intro Section: Stack content vertically and center text */
+    .Intro {
+      flex-direction: column;
+      text-align: center;
+      padding: 2rem 1rem;
+    }
+    
+    .Intro-content {
+      padding-right: 0;
+      margin-bottom: 2rem;
+    }
+    
+    .Intro-image {
+      margin-top: 1rem;
+    }
+    
+    /* Features Section: Change grid to a single column layout */
+    .features-grid {
+      grid-template-columns: 1fr;
+      padding: 0 1rem;
+    }
+    
+    /* Testimonials Section: Change grid to a single column layout */
+    .testimonials-grid {
+      grid-template-columns: 1fr;
+      padding: 0 1rem;
+    }
+    
+    /* Optional: Adjust font sizes for better readability */
+    .Intro h1 {
+      font-size: 2.5rem;
+    }
+    
+    .features h2,
+    .testimonials h2 {
+      font-size: 2rem;
+    }
+    
+    .btn {
+      padding: 0.75rem 1.25rem;
+    }
+}
+
 
 /* ============================================= */
 /*                  End of Home                  */
-/* ============================================= */
-
-
-
-
-/* ============================================= */
-/*                 Icon Effects                  */
-/* ============================================= */
-.icon {
-    width: 24px;
-    height: 24px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    cursor: pointer;
-}
-  
-.icon:hover {
-    transform: scale(1.2);
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
-}
-
-/* ============================================= */
-/*              End of Icon Effects              */
 /* ============================================= */
 
 
@@ -393,7 +380,10 @@ nav ul.dropdown li a:hover {
     font-size: 2.2rem;
     margin-bottom: 20px;
 }
-  
+/*All the paragraph, list items, ordered lists and unordered lists
+tags that are inside a tag that have page-content class will have
+the bellow format
+*/
 .page-content p,
 .page-content li, 
 .page-content ol, 
@@ -410,7 +400,7 @@ nav ul.dropdown li a:hover {
 
 
 /* ============================================= */
-/*          About Page Section                   */
+/*          About Us Page Section                */
 /* ============================================= */
 
 
@@ -494,10 +484,38 @@ h1 {
     color: #666;
 }
 
+/* responsive adjustments*/
+@media (max-width: 590px) {
+    /* Stack the top-content items vertically */
+    .top-content {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+    
+    /* Ensure the about image takes full width */
+    .about-image {
+        max-width: 100%;
+    }
+    
+    /* Center the about-content text */
+    .about-content {
+        text-align: center;
+    }
+    
+    /* Stack benefits cards vertically */
+    .benefits-list {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+}
+
+
+
+
 
 
 /* ============================================= */
-/*          End of About Page Section            */
+/*          End of About Us Page Section         */
 /* ============================================= */
 
 
@@ -535,6 +553,7 @@ h1 {
     max-height: 0;
     overflow: hidden;
     opacity: 0;
+    /* This transition makes the element grow and fade in smoothly over 0.3 seconds */
     transition: max-height 0.3s ease-out, opacity 0.3s ease-out;
 }
 .faq-answer.active {
@@ -584,7 +603,11 @@ footer {
     gap: 15px;
     margin-top: 10px;
 }
-  
+
+/* The ancher tags that are found inside a list item
+that is inside a tag having footer-menu as a class
+will have the bellow format
+*/
 .footer-menu li a {
     font-size: 0.9rem;
     color: #333;
@@ -717,6 +740,7 @@ input::placeholder {
 .signup-body{
     display: flex;
     flex-direction: column;
+    /* The bellow code displays the provided image as a background for the page*/
     background-image: url('Images/signupimage.png');  
     justify-content: center;
     align-items: center;
@@ -941,11 +965,9 @@ input::placeholder {
 
 
 
-
 /* ============================================= */
 /*                 Tests Section                 */
 /* ============================================= */
-
 
 
 
@@ -1083,7 +1105,9 @@ input[type="radio"]:checked + .custom-radio-label {
     border: 1px solid #ccc;
     border-radius: 5px;
 }
-
+/* Any image inside a tag having profile-container as a class
+will have this format 
+*/
 .profile-container img {
     width: 120px;
     height: 120px;
@@ -1150,6 +1174,10 @@ input[type="radio"]:checked + .custom-radio-label {
     margin: 40px auto 100px auto;
 }
 
+/* The h2 header inside an element that 
+has stress-container as a class will have the 
+bellow format
+*/
 .stress-container h2 {
     color: #4CAF50;
 }
@@ -1199,4 +1227,138 @@ and a button inside it this format will occur
 }
 /* ============================================= */
 /*          End of Recommendation Section        */
+/* ============================================= */
+
+
+/* ============================================= */
+/*          Begining of Diseases Section         */
+/* ============================================= */
+
+ 
+.disease {
+    background-color: #f0f0f0;
+    border-radius: 8px;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .disease h2 {
+    color: #004080;
+    margin-bottom: 1rem;
+
+  }
+  
+  .disease p {
+    margin-bottom: 1rem;
+    margin-left: 10%;
+    margin-right: 10%;
+  }
+
+  .btn {
+    display: inline-block;
+    background-color: #004080;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .btn:hover {
+    background-color: #0059b3;
+  }
+  
+.dimage {
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
+  }
+  .r-image {
+    width: 100%;
+    max-width: 400px; 
+    height: auto;
+    border-radius: 8px; 
+
+
+  }
+
+  
+/* ============================================= */
+/*          End of Diseases Section        */
+/* ============================================= */
+
+
+
+
+/* ============================================= */
+/*          Begining of Symtomps Section        */
+/* ============================================= */
+
+
+
+  
+  .content-Symptoms {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+    max-width: 800px;
+    margin: auto;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  .text-section {
+    padding: 1rem;
+    text-align: left;
+  }
+  
+  .text-section h2 {
+    color: #004080;
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+  
+  .text-section p {
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+  }
+  
+  .text-section ul {
+    padding-left: 1.5rem;
+  }
+  
+  .text-section li {
+    margin-bottom: 0.75rem;
+    font-size: 1rem;
+  }
+  
+  /* Video Section */
+  .video-container {
+    text-align: center;
+    margin-top: 2rem;
+    width: 100%;
+  }
+  
+  .video-container h2 {
+    color: #004080;
+    margin-bottom: 1rem;
+  }
+  
+  /* Responsive YouTube Video */
+  .responsive-video {
+    width: 100%;
+    max-width: 700px;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    border-radius: 10px;
+    border: none;
+  }
+
+/* ============================================= */
+/*          End of Symptoms Section              */
 /* ============================================= */
