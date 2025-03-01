@@ -512,9 +512,15 @@ h1 {
     font-size: 2.2rem;
     margin-bottom: 15px;
 }
+
+.faq-main-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 .faq {
-    margin: 0 auto;
-    max-width: 55%;
+    /* margin: 0 auto;
+    max-width: 55%; */
     padding:  60px 30px;
 }
 
