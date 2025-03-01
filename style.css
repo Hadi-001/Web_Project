@@ -205,21 +205,21 @@ nav ul.dropdown li a:hover {
 
 
 
-/*  Features Section     */
+/*  Tests Section     */
 
 
-.features {
+.Tests {
     padding: 4rem 2rem;
 }
 
-.features h2 {
+.Tests h2 {
     text-align: center;
     font-size: 2.5rem;
     margin-bottom: 3rem;
     color: var(--primary-color);
 }
 
-.features-grid {
+.Tests-grid {
     display: grid;
     /* Defines a grid layout with 3 equal-width columns, 
     each taking up one fraction of the available space */
@@ -229,7 +229,7 @@ nav ul.dropdown li a:hover {
     margin: 0 auto;
 }
 
-.feature-card {
+.Test-card {
     background: var(--white);
     padding: 2rem;
     border-radius: 12px;
@@ -237,21 +237,21 @@ nav ul.dropdown li a:hover {
     transition: transform 0.3s ease;
 }
 
-.feature-card:hover {
+.Test-card:hover {
     transform: translateY(-10px);
 }
 
-.feature-icon {
+.Test-icon {
     font-size: 2.5rem;
     margin-bottom: 1rem;
 }
 
-.feature-card h3 {
+.Test-card h3 {
     color: var(--primary-color);
     margin-bottom: 1rem;
 }
 
-.feature-link {
+.Test-link {
     display: inline-block;
     margin-top: 1rem;
     color: var(--primary-color);
@@ -333,8 +333,8 @@ nav ul.dropdown li a:hover {
       margin-top: 1rem;
     }
     
-    /* Features Section: Change grid to a single column layout */
-    .features-grid {
+    /* Tests Section: Change grid to a single column layout */
+    .Tests-grid {
       grid-template-columns: 1fr;
       padding: 0 1rem;
     }
@@ -344,13 +344,18 @@ nav ul.dropdown li a:hover {
       grid-template-columns: 1fr;
       padding: 0 1rem;
     }
+
+    .Test-grid {
+        grid-template-columns: 1fr;
+        padding: 0 1rem;
+      }
     
     /* Optional: Adjust font sizes for better readability */
     .Intro h1 {
       font-size: 2.5rem;
     }
     
-    .features h2,
+    .Tests h2,
     .testimonials h2 {
       font-size: 2rem;
     }
