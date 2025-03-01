@@ -319,14 +319,14 @@ nav ul.dropdown li a:hover {
 
     /* Intro Section: Stack content vertically and center text */
     .Intro {
-      flex-direction: column;
-      text-align: center;
-      padding: 2rem 1rem;
+        flex-direction: column;
+        text-align: center;
+        padding: 2rem 1rem;
     }
     
     .Intro-content {
-      padding-right: 0;
-      margin-bottom: 2rem;
+        padding-right: 0;
+        margin-bottom: 2rem;
     }
     
     .Intro-image {
@@ -335,28 +335,28 @@ nav ul.dropdown li a:hover {
     
     /* Tests Section: Change grid to a single column layout */
     .Tests-grid {
-      grid-template-columns: 1fr;
-      padding: 0 1rem;
+        grid-template-columns: 1fr;
+        padding: 0 1rem;
     }
     
     /* Testimonials Section: Change grid to a single column layout */
     .testimonials-grid {
-      grid-template-columns: 1fr;
-      padding: 0 1rem;
+        grid-template-columns: 1fr;
+        padding: 0 1rem;
     }
     
     /* Optional: Adjust font sizes for better readability */
     .Intro h1 {
-      font-size: 2.5rem;
+        font-size: 2.5rem;
     }
     
     .Tests h2,
     .testimonials h2 {
-      font-size: 2rem;
+        font-size: 2rem;
     }
     
     .btn {
-      padding: 0.75rem 1.25rem;
+        padding: 0.75rem 1.25rem;
     }
 }
 
