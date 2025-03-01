@@ -61,7 +61,7 @@ a {
 
 
 
-@media screen and (max-width: 1025px){
+@media screen and (max-width: 1100px){
     .nav-item{
         margin: 7px;
     }
@@ -212,8 +212,6 @@ nav ul.dropdown li a:hover {
 }
 
 
-
-/*  Tests Section     */
 /*  Tests Section     */
 
 .Tests {
@@ -328,7 +326,7 @@ nav ul.dropdown li a:hover {
 }
 
 /* responsive adjustments*/
-@media (max-width: 590px) {
+@media (max-width: 765px) {
 
     /* Intro Section: Stack content vertically and center text */
     .Intro {
