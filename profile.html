@@ -139,7 +139,7 @@
             data: {
                 labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
                 datasets: [{
-                    label: 'Mood Level',
+                    label: 'Stress Test Score',
                     data: [3, 4, 5, 3, 4, 6, 5],
                     borderColor: 'blue',
                     borderWidth: 2
@@ -154,48 +154,52 @@
             }
         });
 
-        // Second Chart (Activity Level)
-        const ctx2 = document.getElementById('secondChart').getContext('2d');
-        new Chart(ctx2, {
-            type: 'bar',
-            data: {
-                labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
-                datasets: [{
-                    label: 'Activity Level',
-                    data: [2, 3, 4, 2, 5, 6, 7],
-                    backgroundColor: 'green',
-                    borderWidth: 2
-                }]
-            },
-            options: {
-                responsive: true,
-                maintainAspectRatio: false,
-                scales: {
-                    y: { beginAtZero: true }
-                }
+    // Second Chart (Activity Level)
+    const ctx2 = document.getElementById('secondChart').getContext('2d');
+    new Chart(ctx2, {
+        type: 'line',
+        data: {
+            labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+            datasets: [{
+                label: 'Anxiety Test Score',
+                data: [2, 3, 4, 2, 5, 6, 7],
+                backgroundColor: 'green',
+                borderColor: 'green',
+                borderWidth: 2
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            scales: {
+                y: { beginAtZero: true }
             }
-        });
+        }
+    });
 
-        // Third Chart (Sleep Hours)
-        const ctx3 = document.getElementById('thirdChart').getContext('2d');
-        new Chart(ctx3, {
-            type: 'radar',
-            data: {
-                labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
-                datasets: [{
-                    label: 'Sleep Hours',
-                    data: [7, 6, 8, 5, 7, 6, 8],
-                    borderColor: 'purple',
-                    borderWidth: 2,
-                    fill: true,
-                    backgroundColor: 'rgba(128,0,128,0.2)'
-                }]
-            },
-            options: {
-                responsive: true,
-                maintainAspectRatio: false
+    // Third Chart (Sleep Hours)
+    const ctx3 = document.getElementById('thirdChart').getContext('2d');
+    new Chart(ctx3, {
+        type: 'line',
+        data: {
+            labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+            datasets: [{
+                label: 'Depression Test Score',
+                data: [7, 6, 8, 5, 7, 6, 8],
+                borderColor: 'purple',
+                borderWidth: 2,
+                backgroundColor: 'rgba(128,0,128,0.2)'
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            scales: {
+                y: { beginAtZero: true }
             }
-        });
+        }
+    });
+
     </script>
 
     <script
