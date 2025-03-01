@@ -971,7 +971,7 @@ input::placeholder {
 
 
 
-.test-body{
+.test-body {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -991,7 +991,7 @@ input[type="radio"]:checked + .custom-radio-label {
     border-radius: 15px;
 }
 
-.custom-radio-label{
+.custom-radio-label {
     width: 100%;
     background-color: rgb(218, 235, 241);
     border-radius: 15px;
@@ -1245,19 +1245,19 @@ and a button inside it this format will occur
     text-align: center;
 }
   
-  .disease h2 {
+.disease h2 {
     color: #004080;
     margin-bottom: 1rem;
 
 }
   
-  .disease p {
+.disease p {
     margin-bottom: 1rem;
     margin-left: 10%;
     margin-right: 10%;
 }
 
-  .btn {
+.btn {
     display: inline-block;
     background-color: #004080;
     color: #fff;
@@ -1267,7 +1267,7 @@ and a button inside it this format will occur
     transition: background-color 0.3s ease;
 }
   
-  .btn:hover {
+.btn:hover {
     background-color: #0059b3;
     color:white;
 }
@@ -1277,7 +1277,7 @@ and a button inside it this format will occur
     justify-content: center;
     padding: 1rem;
 }
-  .r-image {
+.r-image {
     width: 100%;
     max-width: 400px; 
     height: auto;
@@ -1301,7 +1301,7 @@ and a button inside it this format will occur
 
 
   
-  .content-Symptoms {
+.content-Symptoms {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -1313,45 +1313,45 @@ and a button inside it this format will occur
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-  .text-section {
+.text-section {
     padding: 1rem;
     text-align: left;
 }
   
-  .text-section h2 {
+.text-section h2 {
     color: #004080;
     margin-bottom: 1rem;
     text-align: center;
 }
   
-  .text-section p {
+.text-section p {
     margin-bottom: 1rem;
     font-size: 1.1rem;
 }
   
-  .text-section ul {
+.text-section ul {
     padding-left: 1.5rem;
 }
   
-  .text-section li {
+.text-section li {
     margin-bottom: 0.75rem;
     font-size: 1rem;
 }
   
-  /* Video Section */
-  .video-container {
+/* Video Section */
+.video-container {
     text-align: center;
     margin-top: 2rem;
     width: 100%;
 }
   
-  .video-container h2 {
+.video-container h2 {
     color: #004080;
     margin-bottom: 1rem;
 }
   
-  /* Responsive YouTube Video */
-  .responsive-video {
+/* Responsive YouTube Video */
+.responsive-video {
     width: 100%;
     max-width: 700px;
     height: auto;
