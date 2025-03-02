@@ -235,9 +235,9 @@ if(discardButton)
 //depending on the current page name, the alias currentTest is assigned a value one of the three test objects.
 //This helps making one js code to handle all three tests without the need of copy/paste
 const page = document.title.toLowerCase();
-if (page.includes("depression")) currentTest = depressionTest;
 if (page.includes("anxiety")) currentTest = anxietyTest;
-if (page.includes("stress")) currentTest = stressTest; 
+else if (page.includes("stress")) currentTest = stressTest;
+else currentTest = depressionTest; 
 
 if (questionText)updateQuestion(); // If questionText is not null then this is definitely one of the test pages so we cal updateQuestion()
 
