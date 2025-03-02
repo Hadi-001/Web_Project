@@ -26,7 +26,7 @@
                     <span class="navbar-toggler-icon"></span>
                   </button>
                   <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-                    <a class="navbar-brand" href="#">Mindful Journaling</a>
+                    <a class="navbar-brand" href="Home.html">Mindful Journaling</a>
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
 
                         <li class="nav-item">
@@ -92,11 +92,18 @@
                     <label for="oldPassword">Current Password:</label>
                     <input type="password" id="oldPassword" placeholder="Enter current password" required>
 
-                    <label for="newPassword">New Password:</label>
-                    <input type="password" id="newPassword" placeholder="Enter new password" required>
+                    <label for="password-input" class="form-label">Password</label>
+                    <input type="password" placeholder="Enter new password" class="form-control" id="password-input" required>
+                    <div class="invalid-feedback">
+                    Weak password Should contain at least 8 characters, one uppercase, one lowercase, one number, and one special character
+                    </div>
 
-                    <label for="newPassword">Confirm Password:</label>
-                    <input type="password" id="ConfirmnewPassword" placeholder="Confirm new password" required>
+                    <label for="confirm-password-input" class="form-label">Confirm password</label>
+                    <input type="password" placeholder="Confirm new password" class="form-control" id="confirm-password-input" required>
+                    <div class="invalid-feedback" id="invalid-confirm-password">
+                        Password does not match
+                    </div>
+                    
 
                     <button class="btn-contact-us" type="submit">Update Password</button>
                 </form>
@@ -122,10 +129,15 @@
     <!-- Footer -->
     <footer>
         <div class="footer-container">
+            <!-- Copy Right -->
             <p>&copy; 2025 Mindful Journaling. All rights reserved.</p>
             <ul class="footer-menu">
-                <li><a href="legal.html">Privacy &amp; Terms</a></li>
-                <li><a href="faq.html">FAQ</a></li>
+
+                <!-- Terms and Conditions -->
+                <li><a href="privacy&terms.html">Privacy &amp; Terms</a></li>
+
+                <!-- This link takes the user to Frequently Asked Questions page-->
+                <li><a href="FAQ.html">FAQ</a></li>
             </ul>
         </div>
     </footer>
@@ -203,6 +215,7 @@
 
     </script>
 
+    <script src="javascript.js"></script>
     <script
     src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
     integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"

@@ -6,10 +6,18 @@
     <link rel="stylesheet" href="style.css">
     <title>Mindful Journaling - Login</title>
 </head>
+
+<!-- Used .login-body class to apply flexbox and center page content -->
 <body class="login-body">
-    <main class="login-main">     
-        <div class="login-container">
-            
+
+    <!-- used .login-main class to apply flexbox and easily manipulate content -->
+    <main class="login-main">      
+        <div class="login-container"> 
+            <div class="login-left-container">
+                <h1>Welcome to login</h1>
+                <h3>Don't have an account?</h3>
+                <a href="signup.html"><button class="signup-button">Sign up</button></a>
+            </div>
             <form class="login-form"  action="Home.html" >  <!-- Add method="post" later when connecting backend-->
                 <h1>Sign in</h1>
                 <div class="input-feild">
@@ -23,11 +31,7 @@
                 </div>
                 <button class="login-button" type="Sign in">Submit</button>
             </form>
-            <div class="login-right-container">
-                    <h1>Welcome to login</h1>
-                    <h3>Don't have an account?</h3>
-                    <a href="signup.html"><button class="signup-button">Sign up</button></a>
-            </div>
+            
         </div>   
     </main>
 

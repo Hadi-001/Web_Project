@@ -71,6 +71,8 @@ function startBreathingExercise() {
 //                Tests Section                  //
 // ============================================= //
 
+
+//Every test object contains the questions of the test, the index, scores, and result message and target page of this test to be use in DOM manipulation
 let depressionTest = {
     questions : [
     "Over the last week, how often have you been bothered by having little interest or pleasure in doing things?",
@@ -141,6 +143,7 @@ let stressTest = {
     targetPage: "stressRecommendation.html"
 };
 
+
 let currentTest;
 
 const questionText = document.getElementById("question-text");
@@ -149,6 +152,9 @@ const nextButton = document.getElementById("next-button");
 const discardButton = document.getElementById("discard-button");
 const radioButtons = document.querySelectorAll('input[name="test-option"]');
 
+
+//Manipulates the DOM to view the next question in the list
+//It resets the radio buttons, disables the prev button if the user is at the first question, and sets the text in the next button to submit if this is the last question
 function updateQuestion() {
     questionText.textContent = currentTest.questions[currentTest.currentQuestionIndex];
     prevButton.disabled = currentTest.currentQuestionIndex === 0;
@@ -157,12 +163,17 @@ function updateQuestion() {
     nextButton.disabled = true;
 }
 
+
+//changes the width of the progress bas in % depending on the index of the current question 
 function updateProgress() {
     let progress = ((currentTest.currentQuestionIndex + 1) / currentTest.questions.length) * 100;
     document.getElementById("progress-bar").style.width = progress + "%";
     document.getElementById("progress-bar").setAttribute("aria-valuenow", progress);
 }
 
+//This is called when the user hits the submit button
+//It removes the previous content of the test container and puts in it the score and evaluation of the user and a button that goes to a recommendations page 
+//The recommendations page is differet depending on the type of the test(depression, anxiety, or stresss)
 function displayResult() {
     const totalScore = currentTest.scores.reduce((acc, curr) => acc + curr, 0);
     document.querySelector(".test-container").innerHTML = `<div class="form-last-display-container"><h3>Your total score is: ${totalScore*2.5}/100</h3><br><h3>`+ currentTest.resultMessage(totalScore)+`</h3><br>
@@ -171,13 +182,21 @@ function displayResult() {
     document.querySelector(".navigation-buttons").remove();
 }
 
-
+//Enables the next button if the user presses any radio button 
+//The next button is initially disabled to prevent the user from not selecting anything before moving to the next question 
 radioButtons.forEach((radio) => {
     radio.addEventListener("change", () => {
         nextButton.disabled = false;
     });
 });
 
+
+//In all the code where we use: if(dom object) it is to make sure it's value is not null  to avoid null pointer exception 
+//Because we have a lot of html docs and one js file, it will definetly happen that an id is found in one page and not the other, and one of the dom objects would be null
+
+
+//On clicking the next button, this function finds the checked radio button and fetches it's value, 
+// The function then checks if this is the last question,if so it calls displayResult() otherwise it updates the question and the progress bar
 if (nextButton)
     nextButton.addEventListener("click", () => {
         const selected = document.querySelector('input[name="test-option"]:checked');
@@ -193,6 +212,8 @@ if (nextButton)
         }
 });
 
+
+//handles prevButton on click 
 if (prevButton)
     prevButton.addEventListener("click", () => {
         if (currentTest.currentQuestionIndex > 0) {
@@ -202,6 +223,7 @@ if (prevButton)
         }
 });
 
+//resets the index and the scores array in the current test and goes to Home.html
 if(discardButton)
     discardButton.addEventListener("click", () => {
         currentTest.scores = [];
@@ -210,12 +232,14 @@ if(discardButton)
     });
 
 
+//depending on the current page name, the alias currentTest is assigned a value one of the three test objects.
+//This helps making one js code to handle all three tests without the need of copy/paste
 const page = document.title.toLowerCase();
 if (page.includes("depression")) currentTest = depressionTest;
 if (page.includes("anxiety")) currentTest = anxietyTest;
-if (page.includes("stress")) currentTest = stressTest;
+if (page.includes("stress")) currentTest = stressTest; 
 
-if (questionText)updateQuestion();
+if (questionText)updateQuestion(); // If questionText is not null then this is definitely one of the test pages so we cal updateQuestion()
 
 // ============================================= */
 //             End of test Section               */
@@ -228,23 +252,36 @@ if (questionText)updateQuestion();
 // ============================================= */
 
 
+
+
+//get the elements from the html doc
+const forms = document.querySelectorAll('form');
 const firstNameInput = document.getElementById('signup-first-name');
 const lastNameInput = document.getElementById('signup-last-name');
 const usernameInput = document.getElementById('signup-username');
 const emailInput = document.getElementById('signup-email');
-const passwordInput = document.getElementById('signup-password');
-const confirmPasswordInput = document.getElementById('signup-confirm-password');
+const passwordInput = document.getElementById('password-input');
+const confirmPasswordInput = document.getElementById('confirm-password-input');
+const signupCheckbox = document.getElementById('signup-privacy-checkbox');
+const invalidFeedback = document.getElementById('invalid-confirm-password');
 
+//confirms that the value in the password feild is the same as the one in the confirm password feild 
+//if valid then the function removes the .is-invalid class and adds .is-valid to make the design changes from bootstrap appear 
+//This function is called every time the password feild or the confirm password feild is edited 
 function confirmPassword(){
     if(passwordInput.value === confirmPasswordInput.value){
         confirmPasswordInput.classList.remove('is-invalid');
         confirmPasswordInput.classList.add('is-valid');
+        invalidFeedback.style.display = 'none';
     } else {
         confirmPasswordInput.classList.add('is-invalid');
         confirmPasswordInput.classList.remove('is-valid');
+        invalidFeedback.style.display = 'block';
     }
 }
 
+
+//Makes sure that the first name input feild only contains alphabetical characters
 if (firstNameInput) 
     firstNameInput.addEventListener('input', function(event) {
         const content = event.target.value;
@@ -258,6 +295,7 @@ if (firstNameInput)
         }
     });
 
+//Makes sure that the last name input feild only contains alphabetical characters
 if (lastNameInput) 
     lastNameInput.addEventListener('input', function(event) {
         const content = event.target.value;
@@ -271,6 +309,8 @@ if (lastNameInput)
         }
     });
 
+//Makes sure that the username is not empty 
+//Another validation should be added later which is to make sure that the username isn't taken but that will be done in the backend phase
 if(usernameInput)
     usernameInput.addEventListener('input',function(event){
         const content = event.target.value;
@@ -283,6 +323,7 @@ if(usernameInput)
         }
     });
 
+//Make sure the input is in email format (_@_._) where '_' is any character except space or empty string 
 if(emailInput)
     emailInput.addEventListener('input',function(event){
         const content = event.target.value;
@@ -295,6 +336,8 @@ if(emailInput)
         }
 });
 
+
+//Makes sure password is strong (contains at least 8 chars, has a number, a lowercase and uppercase letter, and a special character)
 if(passwordInput)
     passwordInput.addEventListener('input',function(event){
         const content = event.target.value;
@@ -311,6 +354,26 @@ if(passwordInput)
 if(confirmPassword)
     confirmPasswordInput.addEventListener('input',function(event){
         confirmPassword();
+});
+
+if(signupCheckbox)
+    signupCheckbox.addEventListener('input',function(even){
+        if(signupCheckbox.checked){
+            signupCheckbox.classList.remove('is-invalid');
+            signupCheckbox.classList.add('is-valid');
+        }else{
+            signupCheckbox.classList.add('is-invalid');
+            signupCheckbox.classList.remove('is-valid');
+        }
+});
+
+forms.forEach(forms => {
+    forms.addEventListener('submit',function(event){
+        const invalidInputs = document.querySelectorAll('.is-invalid');
+        if(invalidInputs.length > 0){
+            event.preventDefault();
+        }
+    });
 });
 
 
