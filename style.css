@@ -1325,7 +1325,11 @@ and a button inside it this format will occur
     border-radius: 10px;
     border: none;
 }
-
+#caption {
+    font-style: italic;
+    font-size: 14px;
+    color: gray;
+}
 /* ============================================= */
 /*          End of Symptoms Section              */
 /* ============================================= */
