@@ -234,7 +234,6 @@ const usernameInput = document.getElementById('signup-username');
 const emailInput = document.getElementById('signup-email');
 const passwordInput = document.getElementById('signup-password');
 const confirmPasswordInput = document.getElementById('signup-confirm-password');
-const dignupSubmitButton = document.getElementById()
 
 function confirmPassword(){
     if(passwordInput.value === confirmPasswordInput.value){
