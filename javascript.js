@@ -87,10 +87,9 @@ let depressionTest = {
     currentQuestionIndex: 0,
     scores:[],
     resultMessage: function (score){
-        if (score >= 30)return "You have no depression";
-        else if (score >= 20) return "You have low depression";
-        else if (score >= 10) return "You have moderate depression";
-        else return "You have severe depression";
+        if (score >= 30)return "You have low to no depression";
+        else if (score >= 20) return "You have moderate depression";
+        else  return "You have severe depression";
     },
     targetPage: "depressionRecommendation.html"
 };
@@ -111,10 +110,9 @@ let anxietyTest = {
     currentQuestionIndex: 0,
     scores:[],
     resultMessage: function (score){
-        if (score >= 30)return "You have no anxiety";
-        else if (score >= 20) return "You have low anxiety";
-        else if (score >= 10) return "You have moderate anxiety";
-        else return "You have severe anxiety"
+        if (score >= 30)return "You have low to no anxiety";
+        else if (score >= 20) return "You have moderate anxiety";
+        else  return "You have severe anxiety";
     },
     targetPage: "anxietyRecommendation.html"
     
@@ -136,10 +134,9 @@ let stressTest = {
     currentQuestionIndex: 0,
     scores:[],
     resultMessage: function (score){
-        if (score >= 30)return "You have no stress";
-        else if (score >= 20) return "You have low stress";
-        else if (score >= 10) return "You have moderate stress";
-        else return "You have severe stress"
+        if (score >= 30)return "You have low to no stress";
+        else if (score >= 20) return "You have moderate stress";
+        else  return "You have severe stress";
     },
     targetPage: "stressRecommendation.html"
 };
