@@ -742,6 +742,9 @@ input::placeholder {
 
 .signup-button {
     border: white solid 1px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .login-left-container > h1{
@@ -1085,6 +1088,8 @@ input[type="radio"]:checked + .custom-radio-label {
 
 .navigation-buttons > .discard-button{
     background-color: red;
+    padding: 2px 4px ;
+    border-radius: 8px;
 }
 
 .navigation-buttons > button > a{
@@ -1312,12 +1317,13 @@ and a button inside it this format will occur
 
 .btn {
     display: inline-block;
-    background-color: #004080;
+    background-color: #007bff;
     color: #fff;
     padding: 0.5rem 1rem;
     text-decoration: none;
     border-radius: 4px;
     transition: background-color 0.3s ease;
+    margin: 8px;
 }
   
 .btn:hover {

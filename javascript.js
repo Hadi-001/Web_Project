@@ -122,16 +122,16 @@ let anxietyTest = {
 
 let stressTest = {
     questions : [
-    "Over the last week, How often have you felt that you were unable to control important things in your life?",
-    "Over the last week, How often have you felt confident about your ability to handle personal problems?",
-    "Over the last week, How often have you felt that things were going your way?",
-    "Over the last week, How often have you found that you could not cope with all the things you had to do?",
-    "Over the last week, How often have you been angered because of things that were outside of your control?",
-    "Over the last week, How often have you felt difficulties were piling up so high that you could not overcome them?",
-    "Over the last week, How often have you felt under pressure from work or school?",
-    "Over the last week, How often have you been bothered by arguments or conflicts in your relationships?",
-    "Over the last week, How often have you felt overwhelmed by responsibilities?",
-    "Over the last week, How often have you struggled to find time to relax?"
+        "Over the last week, how often have you felt that you were unable to control important things in your life?",
+        "Over the last week, how often have you felt confident about your ability to handle personal problems?",
+        "Over the last week, how often have you felt that things were going your way?",
+        "Over the last week, how often have you found that you could not cope with all the things you had to do?",
+        "Over the last week, how often have you been angered because of things that were outside of your control?",
+        "Over the last week, how often have you felt difficulties were piling up so high that you could not overcome them?",
+        "Over the last week, how often have you felt under pressure from work or school?",
+        "Over the last week, how often have you been bothered by arguments or conflicts in your relationships?",
+        "Over the last week, how often have you felt overwhelmed by responsibilities?",
+        "Over the last week, how often have you struggled to find time to relax?"
     ],
     currentQuestionIndex: 0,
     scores:[],
@@ -177,7 +177,7 @@ function updateProgress() {
 function displayResult() {
     const totalScore = currentTest.scores.reduce((acc, curr) => acc + curr, 0);
     document.querySelector(".test-container").innerHTML = `<div class="form-last-display-container"><h3>Your total score is: ${totalScore*2.5}/100</h3><br><h3>`+ currentTest.resultMessage(totalScore)+`</h3><br>
-    <a href="`+ currentTest.targetPage +`"><button class="btn-contact-us" id="form-button">Go to recommendations</button></a></div>
+    <a class="btn-contact-us btn" id="form-button" href="`+ currentTest.targetPage +`">Go to recommendations</a></div>
 `;
     document.querySelector(".navigation-buttons").remove();
 }
@@ -351,7 +351,7 @@ if(passwordInput)
         confirmPassword();
 });
 
-if(confirmPassword)
+if(confirmPasswordInput)
     confirmPasswordInput.addEventListener('input',function(event){
         confirmPassword();
 });
