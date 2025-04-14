@@ -28,7 +28,7 @@
       <!-- Bootstrap form -->
             <!-- Used bootstrap classes to make the form compatible with different screen sizes -->
              
-            <form class="form row g-4 col-xl-3 col-md-4 col-10" id="signup-form" method="post" action="signup_form_action.php">
+            <form class="form row g-4 col-xl-3 col-md-4 col-10" id="signup-form" method="POST" action="signup_form_action.php">
                 <div class="col-md-12">
                   <label for="signup-first-name" class="form-label" >First name</label>
               <input type="text" class="form-control" id="signup-first-name" name="firstname" required>
