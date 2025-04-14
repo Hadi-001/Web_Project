@@ -1,30 +1,3 @@
-<?php
-include 'connection.php';
-
-if ($_SERVER["REQUEST_METHOD"] === "POST") {
-    $username = $_POST['username'];
-    $password = $_POST['password'];
-    $firstname = $_POST['firstname'];
-    $lastname = $_POST['lastname'];
-    $email = $_POST['email'];
-
-    $sql = "INSERT INTO ACCOUNT (username, password, firstname, lastname, email)
-            VALUES (?, ?, ?, ?, ?)";
-
-    $stmt = $connection->prepare($sql);
-    $stmt->bind_param("sssss", $username, $password, $firstname, $lastname, $email);
-
-    if ($stmt->execute()) {
-        echo "<script>alert('User registered successfully!');</script>";
-    } else {
-        echo "<script>alert('Error: " . $stmt->error . "');</script>";
-    }
-
-    $stmt->close();
-    $connection->close();
-}
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -55,28 +28,28 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
       <!-- Bootstrap form -->
             <!-- Used bootstrap classes to make the form compatible with different screen sizes -->
              
-            <form class="form row g-4 col-xl-3 col-md-4 col-10" id="signup-form" method="post">
+            <form class="form row g-4 col-xl-3 col-md-4 col-10" id="signup-form" method="post" action="signup_form_action.php">
                 <div class="col-md-12">
-                  <label for="signup-first-name" class="form-label">First name</label>
-              <input type="text" class="form-control" id="signup-first-name" required>
+                  <label for="signup-first-name" class="form-label" >First name</label>
+              <input type="text" class="form-control" id="signup-first-name" name="firstname" required>
               <div class="invalid-feedback">
                 First name can only contain alphabetic characters
               </div>
 
             </div>
             <div class="col-md-12">
-              <label for="signup-last-name" class="form-label">Last name</label>
-              <input type="text" class="form-control" id="signup-last-name" required>
+              <label for="signup-last-name" class="form-label" >Last name</label>
+              <input type="text" class="form-control" id="signup-last-name" name="lastname" required>
               <div class="invalid-feedback">
                 Last name can only contain alphabetic characters
               </div>
 
             </div>
             <div class="col-md-12">
-              <label for="signup-username" class="form-label">Username</label>
+              <label for="signup-username" class="form-label" >Username</label>
               <div class="input-group has-validation">
                 <span class="input-group-text" id="inputGroupPrepend3">@</span>
-                <input type="text" class="form-control" id="signup-username" required>
+                <input type="text" class="form-control" id="signup-username" name="username" required>
                 <div id="validationServerUsernameFeedback" class="invalid-feedback">
                   Feild cannot be empty
                 </div>
@@ -84,16 +57,16 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
             </div>
             <div class="col-md-12">
-              <label for="signup-email" class="form-label">Email</label>
-              <input type="text" class="form-control" id="signup-email" required>
+              <label for="signup-email" class="form-label" >Email</label>
+              <input type="text" class="form-control" id="signup-email" name="email" required>
               <div class="invalid-feedback">
                 Invalid email format
               </div>
             </div>
 
             <div class="col-md-12">
-                <label for="password-input" class="form-label">Password</label>
-                <input type="password" class="form-control" id="password-input" required>
+                <label for="password-input" class="form-label" >Password</label>
+                <input type="password" class="form-control" id="password-input" name="password" required>
                 <div class="invalid-feedback">
                 Weak password Should contain at least 8 characters, one uppercase, one lowercase, one number, and one special character
                 </div>

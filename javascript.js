@@ -264,6 +264,9 @@ const passwordInput = document.getElementById('password-input');
 const confirmPasswordInput = document.getElementById('confirm-password-input');
 const signupCheckbox = document.getElementById('signup-privacy-checkbox');
 const invalidFeedback = document.getElementById('invalid-confirm-password');
+const signup_form = document.getElementById("signup-form")
+
+
 
 //confirms that the value in the password feild is the same as the one in the confirm password feild 
 //if valid then the function removes the .is-invalid class and adds .is-valid to make the design changes from bootstrap appear 
@@ -365,6 +368,55 @@ if(signupCheckbox)
             signupCheckbox.classList.add('is-invalid');
             signupCheckbox.classList.remove('is-valid');
         }
+});
+
+if(signup_form)
+    signup_form.addEventListener("submit", function (e) {
+        e.preventDefault();  // Prevent the form from submitting normally
+
+        const username = usernameInput.value;
+        const email = emailInput.value;
+
+        // Make the AJAX request to check username and email availability
+        fetch("check_email_username.php", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/x-www-form-urlencoded"
+            },
+            body: `username=${encodeURIComponent(username)}&email=${encodeURIComponent(email)}`
+        })
+        .then(res => res.json())  // Parse the JSON response
+        .then(data => {
+
+            let isValid = true;
+
+            // Check if the username is taken
+            if (!data.username) {
+                usernameInput.classList.remove("is-valid");
+                usernameInput.classList.add("is-invalid");
+                usernameInput.nextElementSibling.textContent = "Username is taken.";
+                isValid = false;
+            } else {
+                usernameInput.classList.remove("is-invalid");
+                usernameInput.classList.add("is-valid");
+            }
+
+            // Check if the email is taken
+            if (!data.email) {
+                emailInput.classList.remove("is-valid");
+                emailInput.classList.add("is-invalid");
+                emailInput.nextElementSibling.textContent = "Email is already registered.";
+                isValid = false;
+            } else {
+                emailInput.classList.remove("is-invalid");
+                emailInput.classList.add("is-valid");
+            }
+
+            // If both fields are valid, submit the form
+            if (isValid) {
+                e.target.submit();
+            }
+    });
 });
 
 forms.forEach(forms => {
