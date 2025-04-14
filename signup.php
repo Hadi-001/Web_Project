@@ -1,3 +1,30 @@
+<?php
+include 'connection.php';
+
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
+    $username = $_POST['username'];
+    $password = $_POST['password'];
+    $firstname = $_POST['firstname'];
+    $lastname = $_POST['lastname'];
+    $email = $_POST['email'];
+
+    $sql = "INSERT INTO ACCOUNT (username, password, firstname, lastname, email)
+            VALUES (?, ?, ?, ?, ?)";
+
+    $stmt = $connection->prepare($sql);
+    $stmt->bind_param("sssss", $username, $password, $firstname, $lastname, $email);
+
+    if ($stmt->execute()) {
+        echo "<script>alert('User registered successfully!');</script>";
+    } else {
+        echo "<script>alert('Error: " . $stmt->error . "');</script>";
+    }
+
+    $stmt->close();
+    $connection->close();
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -27,8 +54,8 @@
 
       <!-- Bootstrap form -->
             <!-- Used bootstrap classes to make the form compatible with different screen sizes -->
-             <!-- add method="post" in backend phase -->
-            <form class="form row g-4 col-xl-3 col-md-4 col-10" id="signup-form" action="index.php">
+             
+            <form class="form row g-4 col-xl-3 col-md-4 col-10" id="signup-form" method="post">
                 <div class="col-md-12">
                   <label for="signup-first-name" class="form-label">First name</label>
               <input type="text" class="form-control" id="signup-first-name" required>
