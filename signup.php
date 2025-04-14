@@ -28,7 +28,7 @@
       <!-- Bootstrap form -->
             <!-- Used bootstrap classes to make the form compatible with different screen sizes -->
              <!-- add method="post" in backend phase -->
-            <form class="form row g-4 col-xl-3 col-md-4 col-10" id="signup-form" action="index.html">
+            <form class="form row g-4 col-xl-3 col-md-4 col-10" id="signup-form" action="index.php">
                 <div class="col-md-12">
                   <label for="signup-first-name" class="form-label">First name</label>
               <input type="text" class="form-control" id="signup-first-name" required>
@@ -85,7 +85,7 @@
               <div class="form-check">
                 <input class="form-check-input " type="checkbox" value="" id="signup-privacy-checkbox" aria-describedby="invalidCheck3Feedback" required>
                 <label class="form-check-label" for="signup-privacy-checkbox">
-                  Agree to <a class="text-decoration-underline text-primary" href="privacy&terms.html"><strong>terms and conditions</strong></a>
+                  Agree to <a class="text-decoration-underline text-primary" href="privacy&terms.php"><strong>terms and conditions</strong></a>
                 </label>
                 <div id="invalidCheck3Feedback" class="invalid-feedback">
                   You must agree before submitting.
@@ -96,7 +96,7 @@
               <button id="signup-form-submit-button" class="btn btn-primary" type="submit">Sign up</button>
             </div>
             <br><br>
-            <p >Already have an account? <a class="text-decoration-underline text-primary" href="index.html"><strong>Login</strong></a></p>
+            <p >Already have an account? <a class="text-decoration-underline text-primary" href="index.php"><strong>Login</strong></a></p>
           </form>
           
           <script src="javascript.js"></script>

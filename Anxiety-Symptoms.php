@@ -26,19 +26,19 @@
                   <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-                  <a class="navbar-brand" href="Home.html">Mindful Journaling</a>
+                  <a class="navbar-brand" href="Home.php">Mindful Journaling</a>
                   <ul class="navbar-nav me-auto mb-2 mb-lg-0">
 
                       <li class="nav-item">
-                      <a class="nav-link" href="Home.html">Home</a>
+                      <a class="nav-link" href="Home.php">Home</a>
                       </li>
 
                       <li class="nav-item">
-                      <a class="nav-link" href="articles.html">Articles</a>
+                      <a class="nav-link" href="articles.php">Articles</a>
                       </li>
                       
                       <li class="nav-item">
-                          <a class="nav-link" href="Disease.html">Diseases</a>
+                          <a class="nav-link" href="Disease.php">Diseases</a>
                       </li>
                       
                       <li class="nav-item dropdown">
@@ -46,26 +46,26 @@
                               Recommendations
                           </a>
                           <ul class="dropdown-menu">
-                              <li><a class="dropdown-item" href="depressionRecommendation.html">Depression recommendations</a></li>
-                              <li><a class="dropdown-item" href="anxietyRecommendation.html">Anxiety recommendations</a></li>
-                              <li><a class="dropdown-item" href="stressRecommendation.html">Stress recommendations</a></li>
+                              <li><a class="dropdown-item" href="depressionRecommendation.php">Depression recommendations</a></li>
+                              <li><a class="dropdown-item" href="anxietyRecommendation.php">Anxiety recommendations</a></li>
+                              <li><a class="dropdown-item" href="stressRecommendation.php">Stress recommendations</a></li>
                           </ul>   
                       </li>
                       
                       <li class="nav-item">
-                          <a class="nav-link" href="AboutUs.html">About us</a>
+                          <a class="nav-link" href="AboutUs.php">About us</a>
                       </li>
 
                       <li class="nav-item">
-                          <a class="nav-link" href="contactUS.html">Contact us</a>
+                          <a class="nav-link" href="contactUS.php">Contact us</a>
                       </li>
 
                       <li class="nav-item">
-                          <a class="nav-link" href="FAQ.html">FAQ</a>
+                          <a class="nav-link" href="FAQ.php">FAQ</a>
                       </li>
 
                       <li class="nav-item">
-                          <a class="nav-link" href="profile.html">Profile</a>
+                          <a class="nav-link" href="profile.php">Profile</a>
                       </li>
 
                   </ul>
@@ -119,10 +119,10 @@
           <ul class="footer-menu">
 
               <!-- Terms and Conditions -->
-              <li><a href="privacy&terms.html">Privacy &amp; Terms</a></li>
+              <li><a href="privacy&terms.php">Privacy &amp; Terms</a></li>
 
               <!-- This link takes the user to Frequently Asked Questions page-->
-              <li><a href="FAQ.html">FAQ</a></li>
+              <li><a href="FAQ.php">FAQ</a></li>
           </ul>
       </div>
   </footer>

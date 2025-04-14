@@ -19,9 +19,9 @@
             <div class="login-left-container">
                 <h1>Welcome to login</h1>
                 <h3>Don't have an account?</h3>
-                <a class="signup-button" href="signup.html">Sign up</a>
+                <a class="signup-button" href="signup.php">Sign up</a>
             </div>
-            <form class="login-form"  action="Home.html" >  <!-- Add method="post" later when connecting backend-->
+            <form class="login-form"  action="Home.php" >  <!-- Add method="post" later when connecting backend-->
                 <h1>Sign in</h1>
                 <div class="input-feild">
                 <label for="username">Username</label>

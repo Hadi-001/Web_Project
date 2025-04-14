@@ -27,19 +27,19 @@
                     <span class="navbar-toggler-icon"></span>
                   </button>
                   <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-                    <a class="navbar-brand" href="Home.html">Mindful Journaling</a>
+                    <a class="navbar-brand" href="Home.php">Mindful Journaling</a>
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
 
                         <li class="nav-item">
-                        <a class="nav-link" href="Home.html">Home</a>
+                        <a class="nav-link" href="Home.php">Home</a>
                         </li>
 
                         <li class="nav-item">
-                        <a class="nav-link" href="articles.html">Articles</a>
+                        <a class="nav-link" href="articles.php">Articles</a>
                         </li>
                         
                         <li class="nav-item">
-                            <a class="nav-link" href="Disease.html">Diseases</a>
+                            <a class="nav-link" href="Disease.php">Diseases</a>
                         </li>
                         
                         <li class="nav-item dropdown">
@@ -47,26 +47,26 @@
                                 Recommendations
                             </a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="depressionRecommendation.html">Depression recommendations</a></li>
-                                <li><a class="dropdown-item" href="anxietyRecommendation.html">Anxiety recommendations</a></li>
-                                <li><a class="dropdown-item" href="stressRecommendation.html">Stress recommendations</a></li>
+                                <li><a class="dropdown-item" href="depressionRecommendation.php">Depression recommendations</a></li>
+                                <li><a class="dropdown-item" href="anxietyRecommendation.php">Anxiety recommendations</a></li>
+                                <li><a class="dropdown-item" href="stressRecommendation.php">Stress recommendations</a></li>
                             </ul>   
                         </li>
                         
                         <li class="nav-item">
-                            <a class="nav-link" href="AboutUs.html">About us</a>
+                            <a class="nav-link" href="AboutUs.php">About us</a>
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link" href="contactUS.html">Contact us</a>
+                            <a class="nav-link" href="contactUS.php">Contact us</a>
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link" href="FAQ.html">FAQ</a>
+                            <a class="nav-link" href="FAQ.php">FAQ</a>
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link" href="profile.html">Profile</a>
+                            <a class="nav-link" href="profile.php">Profile</a>
                         </li>
 
                     </ul>
@@ -87,8 +87,8 @@
                     <h1>Welcome to Mindful Journaling</h1>
                     <p>Your path to inner peace and mental clarity begins here.</p>
                     <div class="Intro-buttons">
-                        <a href="articles.html" class="btn primary">Explore More</a>
-                        <a href="AboutUs.html" class="btn secondary">Learn More</a>
+                        <a href="articles.php" class="btn primary">Explore More</a>
+                        <a href="AboutUs.php" class="btn secondary">Learn More</a>
                     </div>
                 </div>
                 <div class="Intro-image"> 
@@ -103,19 +103,19 @@
                     <div class="Test-card">
                         <h3>Anxiety Test</h3>
                         <p>Perform a simple Anxiety Test to evaulute your stage</p>
-                        <a href="anxietyTest.html" class="btn">Test →</a>
+                        <a href="anxietyTest.php" class="btn">Test →</a>
                     </div>
 
                     <div class="Test-card">
                         <h3>Depression Test</h3>
                         <p>Perform a simple Depression Test to evaulute your stage</p>
-                        <a href="depressionTest.html" class="btn">Test →</a>
+                        <a href="depressionTest.php" class="btn">Test →</a>
                     </div>
 
                     <div class="Test-card">
                         <h3>Stress Test</h3>
                         <p>Perform a simple Stress Test to evaulute your stage</p>
-                        <a href="stressTest.html" class="btn">Test →</a>
+                        <a href="stressTest.php" class="btn">Test →</a>
                     </div>
                 </div>
             </section>
@@ -181,10 +181,10 @@
             <ul class="footer-menu">
 
                 <!-- Terms and Conditions -->
-                <li><a href="privacy&terms.html">Privacy &amp; Terms</a></li>
+                <li><a href="privacy&terms.php">Privacy &amp; Terms</a></li>
 
                 <!-- This link takes the user to Frequently Asked Questions page-->
-                <li><a href="FAQ.html">FAQ</a></li>
+                <li><a href="FAQ.php">FAQ</a></li>
             </ul>
         </div>
     </footer>

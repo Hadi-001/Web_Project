@@ -29,7 +29,7 @@
     </div>
     
     <!-- uses bootstrap classes to adjust to different screen sizes -->
-     <!-- After answering all the questions from the js array, the js will remove all content of this section and replace it with the result of the test and a button that goes to anxietyRecommendations.html -->
+     <!-- After answering all the questions from the js array, the js will remove all content of this section and replace it with the result of the test and a button that goes to anxietyRecommendations.php -->
     <section class="test-container col-xs-5 col-md-6 col-xl-4">
 
         <!-- html loads the initial question, then it is updated by javascript on clicking the next or prev buttons -->
@@ -66,7 +66,7 @@
      <!-- contains the navigation buttons to go to prev or next question or to discard test and go home -->
      <div class="navigation-buttons col-10 col-md-6 col-xl-4">
         <button class="blue-button" id="prev-button" disabled>Previous</button>
-        <a class="discard-button" id="discard-button" href="Home.html">Discard test</a>
+        <a class="discard-button" id="discard-button" href="Home.php">Discard test</a>
         <button class="blue-button" id="next-button" disabled>Next</button>
     </div>
 

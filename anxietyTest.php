@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Stress Test - Mindful Journaling</title>
-    <meta name="description" content="Find out your stress levels with this test and learn how to manage stress effectively" />
-    <meta name="keywords" content="stress test, stress relief, mental wellness, self-care" >
+    <title>Anxiety Test - Mindful Journaling</title>
+    <meta name="description" content="Take this 10-question anxiety test to assess your anxiety levels and receive tailored recommendations">
+    <meta name="keywords" content="anxiety test, self-assessment, mental health, anxiety management">
     <link
     href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
     rel="stylesheet"
@@ -13,11 +13,11 @@
     crossorigin="anonymous"
     >
     <link rel="stylesheet" href="style.css">
-    <title>Mindful Journaling - Stress Test</title>
+    <title>Mindful Journaling - Anxiety Test</title>
 </head>
 
 <body class="test-body">
-    <h3>Stress Assessment</h3>
+    <h3>Anxiety Assessment</h3>
 
     <!-- Progress bar from bootstrap -->
     <div class="progress w-50 mt-3">
@@ -25,12 +25,14 @@
     </div>
     
     <!-- uses bootstrap classes to adjust to different screen sizes -->
-     <!-- After answering all the questions from the js array, the js will remove all content of this section and replace it with the result of the test and a button that goes to anxietyRecommendations.html -->
+     <!-- After answering all the questions from the js array, the js will remove all content of this section and replace it with the result of the test and a button that goes to anxietyRecommendations.php -->
     <section class="test-container col-xs-5 col-md-6 col-xl-4">
 
         <!-- html loads the initial question, then it is updated by javascript on clicking the next or prev buttons -->
-        <h5 id="question-text">How often have you felt that you were unable to control important things in your life?</h5>
+        <h5 id="question-text">Over the last week, how often have you been bothered by having little interest or pleasure in doing things?</h5>
         <br>
+
+        <!-- radio buttons group from bootstrap which represent the 4 options the user can choose from to answer the question -->
         <ul class="options">
             <li>
                 <div class="response-container option-1">
@@ -59,12 +61,11 @@
         </ul>
     </section>
 
-
     <!-- Uses bootstrap classes to adjust for different screen sizes -->
-    <!-- contains the navigation buttons to go to prev or next question or to discard test and go home -->
+     <!-- contains the navigation buttons to go to prev or next question or to discard test and go home -->
     <div class="navigation-buttons col-10 col-md-6 col-xl-4">
         <button class="blue-button" id="prev-button" disabled>Previous</button>
-        <a class="discard-button" id="discard-button" href="Home.html">Discard test</a>
+        <a class="discard-button" id="discard-button" href="Home.php">Discard test</a>
         <button class="blue-button" id="next-button" disabled>Next</button>
     </div>
 

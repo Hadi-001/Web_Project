@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Anxiety Management Guide</title>
-    <meta name="description" content="Explore some recommendations for anxiety and find resources to help manage these conditions" >
-    <meta name="keywords" content="mental health, recommendations" >
+    <title>Stress Management Guide</title>
+    <meta name="description" content="Learn stress management techniques, including guided breathing exercises for relaxation">
+    <meta name="keywords" content="stress relief, relaxation techniques, mental wellness">
     <link
     href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
     rel="stylesheet"
@@ -13,8 +13,9 @@
     crossorigin="anonymous"
     >
     <link rel="stylesheet" href="style.css">
+
 </head>
-<body class="anxiety-body">
+<body class="stress-body">
     <!-- Header common in all pages -->
     <header>
         <!-- Header Container (div) -->
@@ -27,19 +28,19 @@
                     <span class="navbar-toggler-icon"></span>
                   </button>
                   <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-                    <a class="navbar-brand" href="Home.html">Mindful Journaling</a>
+                    <a class="navbar-brand" href="Home.php">Mindful Journaling</a>
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
 
                         <li class="nav-item">
-                        <a class="nav-link" href="Home.html">Home</a>
+                        <a class="nav-link" href="Home.php">Home</a>
                         </li>
 
                         <li class="nav-item">
-                        <a class="nav-link" href="articles.html">Articles</a>
+                        <a class="nav-link" href="articles.php">Articles</a>
                         </li>
                         
                         <li class="nav-item">
-                            <a class="nav-link" href="Disease.html">Diseases</a>
+                            <a class="nav-link" href="Disease.php">Diseases</a>
                         </li>
                         
                         <li class="nav-item dropdown">
@@ -47,26 +48,26 @@
                                 Recommendations
                             </a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="depressionRecommendation.html">Depression recommendations</a></li>
-                                <li><a class="dropdown-item" href="anxietyRecommendation.html">Anxiety recommendations</a></li>
-                                <li><a class="dropdown-item" href="stressRecommendation.html">Stress recommendations</a></li>
+                                <li><a class="dropdown-item" href="depressionRecommendation.php">Depression recommendations</a></li>
+                                <li><a class="dropdown-item" href="anxietyRecommendation.php">Anxiety recommendations</a></li>
+                                <li><a class="dropdown-item" href="stressRecommendation.php">Stress recommendations</a></li>
                             </ul>   
                         </li>
                         
                         <li class="nav-item">
-                            <a class="nav-link" href="AboutUs.html">About us</a>
+                            <a class="nav-link" href="AboutUs.php">About us</a>
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link" href="contactUS.html">Contact us</a>
+                            <a class="nav-link" href="contactUS.php">Contact us</a>
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link" href="FAQ.html">FAQ</a>
+                            <a class="nav-link" href="FAQ.php">FAQ</a>
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link" href="profile.html">Profile</a>
+                            <a class="nav-link" href="profile.php">Profile</a>
                         </li>
 
                     </ul>
@@ -77,34 +78,40 @@
         </div>
         </header>
     
-    <!-- This section contains tips to decrease anxiety -->
+    <!-- This section contains tips to decrease stress -->
     <section>
-        <div class="anxiety-container">
-            <h2>🌿 Find Your Calm</h2>
-            <p>Feeling anxious? Take a moment to slow down and breathe.</p>
+        <div class="stress-container">
+            <h2>🌱 Breathe, Relax, and Reset</h2>
+            <p>Feeling overwhelmed? Take a deep breath. You're doing great!</p>
             
+            <!-- Breathing Exercise -->
             <div class="activity">
-                <h3>🧘 Grounding Anxiety Exercise </h3>
-                <p>Try the 5-4-3-2-1 technique: Name 5 things you can see, 4 you can touch, 3 you can hear, 2 you can smell, and 1 you can taste.</p>
+                <h3>🫁 Quick Breathing Exercise</h3>
+                <p id="breathing-instructions">Click below to start.</p>
+                <p id="breathing-timer"></p>
+                <button class="btn-contact-us" id="breathing-exercise-btn">Start</button>
             </div>
-            
+    
+            <!-- Motivational Quote -->
             <div class="quote-box">
-                <p>“You don’t have to control your thoughts. You just have to stop letting them control you.” – Dan Millman</p>
+                <p>“Almost everything will work again if you unplug it for a few minutes… including you.” – Anne Lamott</p>
             </div>
-            
+    
+            <!-- Stress Management Tips -->
             <div class="tips">
-                <h3>💡 Anxiety Management Tips</h3>
+                <h3>💡 Stress Management Tips</h3>
                 <ul class="tips-elements">
-                    <li>🌬️ Practice deep breathing exercises.</li>
-                    <li>📖 Write down your worries to clear your mind.</li>
-                    <li>🏃 Engage in light exercise like stretching or yoga.</li>
-                    <li>☕ Limit caffeine intake, as it can increase anxiety.</li>
-                    <li>🎨 Engage in a creative activity like drawing or journaling.</li>
-                    <li>📞 Reach out to a friend or loved one for support.</li>
+                    <li>🛌 Get enough sleep – aim for at least 7 hours.</li>
+                    <li>💧 Stay hydrated – drink plenty of water.</li>
+                    <li>🚶 Take a short walk or stretch every hour.</li>
+                    <li>🎧 Listen to calming music or nature sounds.</li>
+                    <li>📅 Plan your tasks to avoid last-minute stress.</li>
+                    <li>🗣️ Talk to a friend or family member when feeling overwhelmed.</li>
                 </ul>
             </div>
-            
-            <a class="btn" href="Home.html">Return Home</a>
+    
+            <!-- return home step -->
+            <a class="btn" href="Home.php">Return Home</a>
         </div>    
     </section>
     
@@ -116,10 +123,10 @@
             <ul class="footer-menu">
 
                 <!-- Terms and Conditions -->
-                <li><a href="privacy&terms.html">Privacy &amp; Terms</a></li>
+                <li><a href="privacy&terms.php">Privacy &amp; Terms</a></li>
 
                 <!-- This link takes the user to Frequently Asked Questions page-->
-                <li><a href="FAQ.html">FAQ</a></li>
+                <li><a href="FAQ.php">FAQ</a></li>
             </ul>
         </div>
     </footer>
