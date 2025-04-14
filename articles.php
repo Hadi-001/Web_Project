@@ -82,35 +82,30 @@
         <section class="articles-section">
             <h2>Explore Mental Well-being</h2>
             <div class="articles-container">
+            <?php
+                require_once 'connection.php';
+
+                $sql = "SELECT article_title, author_image, article_description, article_link FROM ARTICLE";
+                $result = $conn->query($sql);
+
+                while ($row = $result->fetch_assoc()) {
+                    $title = htmlspecialchars($row['article_title']);
+                    $image = htmlspecialchars($row['author_image']);
+                    $description = htmlspecialchars($row['article_description']);
+                    $link = htmlspecialchars($row['article_link']);
+
+                    echo '<article class="article-part">';
+                    echo '<img class="article-img" src="' . $image . '" alt="Author image">';
+                    echo '<div class="article-content">';
+                    echo '<h3>' . $title . '</h3>';
+                    echo '<p>' . $description . '</p>';
+                    echo '<a href="' . $link . '" class="read-more" target="_blank">Read More</a>';
+                    echo '</div>';
+                    echo '</article>';
+                }
                 
-                <article class="article-part">
-                    <!-- The following image is the publisher image -->
-                    <img class="article-img" src="Images/felson_sabrina_382x382.png" alt="Felson Sabrina image">
-                    <div class="article-content">
-                        <h3>Ways to Manage Stress</h3>
-                        <p>Learn practical techniques to reduce stress and improve your mental health.</p>
-                        <a href="https://www.webmd.com/balance/stress-management/stress-management" class="read-more" target="_blank">Read More</a>
-                    </div>
-                </article>
-        
-                <article class="article-part">
-                    <img class="article-img" src="Images/where_garey.jpg" alt="Garey image">
-                    <div class="article-content">
-                        <h3>The Power of Mindfulness</h3>
-                        <p>Discover how mindfulness can help you stay present and manage anxiety.</p>
-                        <a href="https://www.danabehavioralhealth.org/the-power-of-mindfulness-techniques-and-benefits-for-mental-health/#:~:text=Mindfulness%20is%20a%20powerful%20tool,and%20peace%20in%20your%20life." class="read-more" target="_blank">Read More</a>
-                    </div>
-                </article>
-        
-                <article class="article-part">
-                    <img src="Images/sandhya-pruthi-11254262.png" alt="Sandhy image">
-                    <div class="article-content">
-                        <h3>Sleep tips: 6 steps to better sleep</h3>
-                        <p>Consider simple tips for better sleep, from setting a sleep schedule to including physical activity in your daily routine.</p>
-                        <a href="https://www.mayoclinic.org/healthy-lifestyle/adult-health/in-depth/sleep/art-20048379" class="read-more" target="_blank">Read More</a>
-                    </div>
-                </article>
-        
+                $conn->close();
+            ?>
             </div>
         </section>
         

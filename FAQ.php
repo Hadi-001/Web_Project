@@ -84,39 +84,23 @@
             <section class="faq col-xl-5 col-sm-7 col-11">
                 <h1>Frequently Asked Questions</h1>
                 
-                <!-- Each one of these divs contains a button which is the question and an answer,
-                    the answers by default are hidden and will only appear when the user presses the button
-                -->
-                <div class="faq-item">
-                    <button class="faq-question">What information do you collect?</button>
-                    <p class="faq-answer">We collect minimal personal data, such as email addresses, only for communication and support purposes.</p>
-                </div>
-            
-                <div class="faq-item">
-                    <button class="faq-question">Do you use cookies?</button>
-                    <p class="faq-answer">Yes, we use basic cookies to enhance user experience. You can disable them in your browser settings.</p>
-                </div>
-            
-                <div class="faq-item">
-                    <button class="faq-question">How is my data protected?</button>
-                    <p class="faq-answer">We implement security measures like encryption and access controls to protect your data.</p>
-                </div>
-            
-                <div class="faq-item">
-                    <button class="faq-question">What is my privacy policy?</button>
-                    <p class="faq-answer">Our privacy policy ensures that we collect minimal user data and do not share it with third parties.</p>
-                </div>
-            
-                <div class="faq-item">
-                    <button class="faq-question">How do I contact support?</button>
-                    <p class="faq-answer">You can contact support by emailing us at <a class="email-link-style" href="mailto:mindfuljournaling@gmail.com">mindfuljournaling@gmail.com</a>.</p>
-                </div>
-            
-                <div class="faq-item">
-                    <button class="faq-question">Can I delete my data?</button>
-                    <p class="faq-answer">Yes, you can request data deletion by reaching out to us.</p>
-                </div>
+                <?php
+                    require_once 'connection.php';
 
+                    $sql = "SELECT question, answer FROM FAQ";
+                    $result = $conn->query($sql);
+
+                    while ($row = $result->fetch_assoc()) {
+                        $question = htmlspecialchars($row['question']);
+                        $answer = $row['answer']; 
+
+                        echo '<div class="faq-item">';
+                        echo '<button class="faq-question">' . $question . '</button>';
+                        echo '<p class="faq-answer">' . $answer . '</p>';
+                        echo '</div>';
+                    }
+                    $conn->close();
+                ?>
             </section>
             
             

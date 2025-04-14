@@ -88,7 +88,7 @@
 
                 <!-- Contact Form -->
                  <!-- add the method="post" in backend phase -->
-                <form action="#" class="contact-form">
+                 <form action="submit_feedback.php" method="POST" class="contact-form">
 
                     <!--Take the name of the user-->
                     <div class="input-group">
