@@ -93,7 +93,7 @@ let depressionTest = {
         else if (score >= 20) return "You have moderate depression";
         else  return "You have severe depression";
     },
-    targetPage: "depressionRecommendation.html"
+    targetPage: "depressionRecommendation.php"
 };
 
 let anxietyTest = {
@@ -116,7 +116,7 @@ let anxietyTest = {
         else if (score >= 20) return "You have moderate anxiety";
         else  return "You have severe anxiety";
     },
-    targetPage: "anxietyRecommendation.html"
+    targetPage: "anxietyRecommendation.php"
     
 };
 
@@ -140,7 +140,7 @@ let stressTest = {
         else if (score >= 20) return "You have moderate stress";
         else  return "You have severe stress";
     },
-    targetPage: "stressRecommendation.html"
+    targetPage: "stressRecommendation.php"
 };
 
 
@@ -223,12 +223,12 @@ if (prevButton)
         }
 });
 
-//resets the index and the scores array in the current test and goes to Home.html
+//resets the index and the scores array in the current test and goes to Home.php
 if(discardButton)
     discardButton.addEventListener("click", () => {
         currentTest.scores = [];
         currentTest.currentQuestionIndex = 0;
-        window.location.href = "Home.html";
+        window.location.href = "Home.php";
     });
 
 
