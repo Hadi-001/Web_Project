@@ -6,6 +6,12 @@
     <title>Mindful Journey</title>
     <meta name="description" content="Log in to access your personalized mental health resources, tests, and progress tracking">
     <meta name="keywords" content="login, mental health, mindfulness, user authentication, self-care">
+    <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+    crossorigin="anonymous"
+    >
     <link rel="stylesheet" href="style.css">
     <title>Mindful Journaling - Login</title>
 </head>
@@ -21,7 +27,7 @@
                 <h3>Don't have an account?</h3>
                 <a class="signup-button" href="signup.php">Sign up</a>
             </div>
-            <form class="login-form"  action="Home.php" >  <!-- Add method="post" later when connecting backend-->
+            <form class="login-form form"  action="Home.php" >  <!-- Add method="post" later when connecting backend-->
                 <h1>Sign in</h1>
                 <div class="input-feild">
                 <label for="username">Username</label>

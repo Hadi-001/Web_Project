@@ -82,29 +82,22 @@
         <img src="Images/diseases.png" alt="You are not alone" class="r-image">
     </div>
     
-    <!-- Depression Section -->
-    <section class="disease">
-      <h2>Depression</h2>
-      <p>
-        Depression, clinically referred to as Major Depressive Disorder (MDD), is a common and serious mental health 
-        condition characterized by persistent feelings of sadness, hopelessness,
-         and a lack of interest or pleasure in previously enjoyed activities. It significantly impacts an individual's 
-         emotional, cognitive, and physical functioning, often leading to impairments in daily life, relationships, and occupational performance.
-      </p>
-      <a href="Depression-Symptoms.php" class="btn">Learn More</a>
-    </section>
-    
-    <br>
-    <!-- Anxiety Section -->
-    <section class="disease">
-      <h2>Anxiety</h2>
-      <p>
-        Anxiety, in a clinical context, refers to a group of mental health disorders characterized by excessive and persistent fear, worry,
-         or apprehension that is disproportionate to the actual threat or situation. The most common anxiety disorders include Generalized Anxiety Disorder
-          (GAD), Panic Disorder, Social Anxiety Disorder (Social Phobia), and Specific Phobias, among others.
-      </p>
-      <a href="Anxiety-Symptoms.php" class="btn">Learn More</a>
-    </section>
+    <?php
+      include 'connection.php'; 
+
+      $sql = "SELECT * FROM DISEASE";
+      $result = $connection->query($sql);
+
+      while ($row = $result->fetch_assoc()) {
+          echo '<section class="disease">';
+          echo '<h2>' . htmlspecialchars($row['name']) . '</h2>';
+          echo '<p>' . htmlspecialchars($row['description']) . '</p>';
+          echo '<a href="' . htmlspecialchars($row['link']) . '" class="btn">Learn More</a>';
+          echo '</section><br>';
+      }
+      connection->close();
+    ?>
+
   </main>
  <!-- Footer -->
  <footer>

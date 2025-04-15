@@ -88,7 +88,7 @@
                     require_once 'connection.php';
 
                     $sql = "SELECT question, answer FROM FAQ";
-                    $result = $conn->query($sql);
+                    $result = $connection->query($sql);
 
                     while ($row = $result->fetch_assoc()) {
                         $question = htmlspecialchars($row['question']);
@@ -99,7 +99,7 @@
                         echo '<p class="faq-answer">' . $answer . '</p>';
                         echo '</div>';
                     }
-                    $conn->close();
+                    $connection->close();
                 ?>
             </section>
             

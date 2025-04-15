@@ -86,7 +86,7 @@
                 require_once 'connection.php';
 
                 $sql = "SELECT article_title, author_image, article_description, article_link FROM ARTICLE";
-                $result = $conn->query($sql);
+                $result = $connection->query($sql);
 
                 while ($row = $result->fetch_assoc()) {
                     $title = htmlspecialchars($row['article_title']);
@@ -104,7 +104,7 @@
                     echo '</article>';
                 }
                 
-                $conn->close();
+                $connection->close();
             ?>
             </div>
         </section>

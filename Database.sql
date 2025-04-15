@@ -30,6 +30,14 @@ CREATE TABLE FAQ(
     answer VARCHAR(4096) NOT NULL
 );
 
+CREATE TABLE DISEASE (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(100) NOT NULL,
+    description TEXT NOT NULL,
+    link VARCHAR(255) NOT NULL
+);
+
+
 
 INSERT INTO ARTICLE(article_title, author_image, article_description, article_link)VALUES 
 ('Ways to Manage Stress', 'Images/felson_sabrina_382x382.png', 'Learn practical techniques to reduce stress and improve your mental health.', 'https://www.webmd.com/balance/stress-management/stress-management'),
@@ -44,3 +52,8 @@ INSERT INTO FAQ (question, answer) VALUES
 ('What is my privacy policy?', 'Our privacy policy ensures that we collect minimal user data and do not share it with third parties.'),
 ('How do I contact support?', 'You can contact support by emailing us at <a class="email-link-style" href="mailto:mindfuljournaling@gmail.com">mindfuljournaling@gmail.com</a>.'),
 ('Can I delete my data?', 'Yes, you can request data deletion by reaching out to us.');
+
+
+INSERT INTO DISEASE (name, description, link) VALUES
+('Depression', "Depression, clinically referred to as Major Depressive Disorder (MDD), is a common and serious mental health condition characterized by persistent feelings of sadness, hopelessness, and a lack of interest or pleasure in previously enjoyed activities. It significantly impacts an individual's emotional, cognitive, and physical functioning, often leading to impairments in daily life, relationships, and occupational performance.", 'Depression-Symptoms.php'),
+('Anxiety', 'Anxiety, in a clinical context, refers to a group of mental health disorders characterized by excessive and persistent fear, worry, or apprehension that is disproportionate to the actual threat or situation. The most common anxiety disorders include Generalized Anxiety Disorder (GAD), Panic Disorder, Social Anxiety Disorder (Social Phobia), and Specific Phobias, among others.', 'Anxiety-Symptoms.php');

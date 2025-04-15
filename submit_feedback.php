@@ -11,7 +11,7 @@ require_once 'connection.php';
         die("Invalid email format.");
     }
 
-    $stmt = $conn->prepare("INSERT INTO FEEDBACK (username, email, message) VALUES (?, ?, ?)");
+    $stmt = $connection->prepare("INSERT INTO FEEDBACK (username, email, message) VALUES (?, ?, ?)");
     if ($stmt === false) {
         die("Prepare failed: " . $conn->error);
     }
@@ -26,7 +26,7 @@ require_once 'connection.php';
     }
 
     $stmt->close();
-    $conn->close();
+    $connection->close();
 
 
 ?>
