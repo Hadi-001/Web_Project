@@ -10,9 +10,9 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
     $sql = "INSERT INTO ACCOUNT (username, password, firstname, lastname, email) VALUES (?, ?, ?, ?, ?)";
     
-    #$hashed_password = password_hash($password, PASSWORD_DEFAULT);
+    $hashed_password = password_hash($password, PASSWORD_DEFAULT);
     $stmt = $connection->prepare($sql);
-    $stmt->bind_param("sssss", $username, $password, $firstname, $lastname, $email);
+    $stmt->bind_param("sssss", $username, $hashed_password, $firstname, $lastname, $email);
 
     if ($stmt->execute()) {
         header("Location: index.php");
