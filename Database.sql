@@ -37,6 +37,15 @@ CREATE TABLE DISEASE (
     link VARCHAR(255) NOT NULL
 );
 
+CREATE TABLE TEST_SCORE (
+    test_id INT AUTO_INCREMENT PRIMARY KEY,
+    user_id INT NOT NULL,
+    score DOUBLE(5, 2) NOT NULL,
+    test_type VARCHAR(100) NOT NULL,
+    test_date DATETIME NOT NULL,
+    FOREIGN KEY (user_id) REFERENCES ACCOUNT(id)
+);
+
 
 
 INSERT INTO ARTICLE(article_title, author_image, article_description, article_link)VALUES 

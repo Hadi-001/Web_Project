@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mindful Journey: Sign Up</title>
+    <title>Depression Test - Mindful Journaling</title>
     <meta name="description" content="Evaluate your mental well-being with our depression self-assessment and get personalized recommendations">
     <meta name="keywords" content="depression test, mental health, self-assessment, depression management">
     <link
