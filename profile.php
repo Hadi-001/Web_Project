@@ -85,14 +85,38 @@
             <img src="Images/anonymous-user.png" alt="">
             <h2>User Profile</h2>
             <div class="profile-details">
-                <p><strong>Name:</strong> <span id="userName">John Doe</span></p>
-                <p><strong>Username:</strong> <span id="userUsername">johndoe123</span></p>
-                <p><strong>Email:</strong> <span id="userEmail">johndoe@example.com</span></p>
+                <?php 
+                    session_start();
+                    require_once 'connection.php';
 
+                    if(!isset($_SESSION['user_id'])){
+                        header("Location: login.php");
+                        exit;
+                    }
+
+                    $user_id = $_SESSION['user_id'];
+                    $stmt = $connection->prepare("SELECT firstname, lastname, username, email FROM ACCOUNT WHERE id = ?");
+                    $stmt->bind_param("i",$user_id);
+                    $stmt->execute();
+                    $result = $stmt->get_result();
+
+                    $row = $result->fetch_assoc();
+                    $fullName = htmlspecialchars($row['firstname'] . ' ' . $row['lastname']);
+                    $username = htmlspecialchars($row['username']);
+                    $email = htmlspecialchars($row['email']);
+
+                    echo "<p><strong>Name:</strong> <span id='userName'>{$fullName}</span></p>";
+                    echo "<p><strong>Username:</strong> <span id='userUsername'>{$username}</span></p>";
+                    echo "<p><strong>Email:</strong> <span id='userEmail'>{$email}</span></p>";
+
+                ?>
                 <!-- Password Change -->
                 <form id="passwordForm">
-                    <label for="oldPassword">Current Password:</label>
-                    <input type="password" id="oldPassword" placeholder="Enter current password" required>
+                    <label for="old-password">Current Password:</label>
+                    <input type="password" id="old-password" placeholder="Enter current password" required>
+                    <div class="invalid-feedback" id="invalid-pass-change-msg">
+                        Wrong password
+                    </div>
 
                     <label for="password-input" class="form-label">Password</label>
                     <input type="password" placeholder="Enter new password" class="form-control" id="password-input" required>
@@ -107,7 +131,7 @@
                     </div>
                     
 
-                    <button class="btn-contact-us" type="submit">Update Password</button>
+                    <button class="btn-contact-us" id="" type="submit">Update Password</button>
                 </form>
             </div>
         </div>

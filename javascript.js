@@ -434,3 +434,53 @@ forms.forEach(forms => {
 // ============================================= */
 //            End of Sign up Section             */
 // ============================================= */
+
+
+
+
+
+// ============================================= */
+//             Change pass Section               */
+// ============================================= */
+
+let changePassForm = document.getElementById('passwordForm');
+let curPassInput = document.getElementById('old-password');
+
+
+
+if(changePassForm){
+    changePassForm.addEventListener("submit", function(e){
+        e.preventDefault();
+
+        let newPass = passwordInput.value;
+        let curPass = curPassInput.value;
+        
+
+        fetch("change_password.php", {
+            method: "POST",
+            headers:{
+                "content-Type" : "application/json"
+            },
+            body: JSON.stringify({
+                cur_pass: curPass,
+                new_pass: newPass
+            })
+        }).then(res => res.json()).then(data => {
+            if(data.success){
+                curPassInput.setAttribute("class","");
+                alert("Password changed successfully");
+            }else{
+                curPassInput.setAttribute("class","is-invalid");
+                alert("Password is incorrect");
+            }
+            alert(data.message);
+        });
+    });
+}
+
+// ============================================= */
+//          End of Change pass Section           */
+// ============================================= */
+
+
+

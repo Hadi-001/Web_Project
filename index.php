@@ -27,7 +27,7 @@
                 <h3>Don't have an account?</h3>
                 <a class="signup-button" href="signup.php">Sign up</a>
             </div>
-            <form class="login-form form"  action="Home.php" >  <!-- Add method="post" later when connecting backend-->
+            <form class="login-form form" method="POST" action="login_action.php" > 
                 <h1>Sign in</h1>
                 <div class="input-feild">
                 <label for="username">Username</label>
@@ -36,7 +36,7 @@
             
                 <div class="input-feild">
                 <label for="password">Password</label>
-                <input class="login-input" placeholder="Password" type="password" id="password" name="passwrod" required >
+                <input class="login-input" placeholder="Password" type="password" id="password" name="password" required >
                 </div>
                 <button class="login-button" type="submit">Sign in </button>
             </form>
