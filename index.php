@@ -21,7 +21,7 @@
                 <h3>Don't have an account?</h3>
                 <a class="signup-button" href="signup.php">Sign up</a>
             </div>
-            <form class="login-form form" method="POST" action="login_action.php" > 
+            <form class="login-form form" id = "login-form" method="POST" action="login_action.php" > 
                 <h1>Sign in</h1>
                 <div class="input-feild">
                 <label for="username">Username</label>
