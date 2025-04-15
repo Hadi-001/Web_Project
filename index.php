@@ -6,12 +6,6 @@
     <title>Mindful Journey</title>
     <meta name="description" content="Log in to access your personalized mental health resources, tests, and progress tracking">
     <meta name="keywords" content="login, mental health, mindfulness, user authentication, self-care">
-    <link
-    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-    rel="stylesheet"
-    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
-    crossorigin="anonymous"
-    >
     <link rel="stylesheet" href="style.css">
     <title>Mindful Journaling - Login</title>
 </head>
@@ -31,28 +25,30 @@
                 <h1>Sign in</h1>
                 <div class="input-feild">
                 <label for="username">Username</label>
-                <input class="login-input" placeholder="Username" type="text" id="username" name="username" required>
+                <input class="login-input" id="login-username" placeholder="Username" type="text" name="username" required>
                 </div>
             
                 <div class="input-feild">
                 <label for="password">Password</label>
-                <input class="login-input" placeholder="Password" type="password" id="password" name="password" required >
+                <input class="login-input" id="login-password" placeholder="Password" type="password" name="password" required >
                 </div>
+
+                <div id="login-error" class="login-error-message" style="color:red;font-size: 0.9rem;margin-top: 10px;text-align: center;"></div> 
                 <button class="login-button" type="submit">Sign in </button>
             </form>
             
         </div>   
     </main>
-
-    <script
-      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+    <script src="javascript.js"></script>
+    <!-- <script
+      src="https://c...content-available-to-author-only...r.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
       integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
       crossorigin="anonymous"
     ></script>
     <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
+      src="https://c...content-available-to-author-only...r.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
       integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
       crossorigin="anonymous"
-    ></script>
+    ></script> -->
 </body>
 </html>

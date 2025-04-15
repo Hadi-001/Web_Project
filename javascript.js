@@ -484,3 +484,48 @@ if(changePassForm){
 
 
 
+// ============================================= */
+//                 Login Section                 */
+// ============================================= */
+
+const login_form = document.getElementById("login-form");
+const login_Username = document.getElementById("login-username");
+const login_password =  document.getElementById("login-password");
+const login_error = document.getElementById("login-error");
+
+login_form.addEventListener("submit", function (e) {
+    e.preventDefault(); // prevent normal form submission
+
+    const form = e.target;
+    const formData = new FormData(form);
+
+
+    login_error.textContent = "";
+    // login_Username.classList.remove("invalid");
+    // login_password.classList.remove("invalid");
+
+    fetch("login_action.php", {
+        method: "POST",
+        body: formData
+    })
+    .then(res => res.json())
+    .then(data => {
+        if (data.success) {
+            window.location.href = "Home.php";
+        } else {
+            login_error.textContent = "Invalid username or password.";
+            // login_Username.classList.add("invalid");
+            // login_password.classList.add("invalid");
+            
+        }
+    })
+    .catch(error => {
+        console.error("Login error:", error);
+    });
+});
+
+// ============================================= */
+//            End of Login Section               */
+// ============================================= */
+
+
