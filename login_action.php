@@ -14,9 +14,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     if ($row = $result->fetch_assoc()) {
         if (password_verify($password, $row["password"])) {
             $response["success"] = true;
-            // Optionally start session
-            // session_start();
-            // $_SESSION["user_id"] = $row["id"];
+            session_start();
+            $_SESSION["user_id"] = $row["id"];
         }
     }
 }

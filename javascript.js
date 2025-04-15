@@ -177,9 +177,22 @@ function updateProgress() {
 function displayResult() {
     const totalScore = currentTest.scores.reduce((acc, curr) => acc + curr, 0);
     document.querySelector(".test-container").innerHTML = `<div class="form-last-display-container"><h3>Your total score is: ${totalScore*2.5}/100</h3><br><h3>`+ currentTest.resultMessage(totalScore)+`</h3><br>
-    <a class="btn-contact-us btn" id="form-button" href="`+ currentTest.targetPage +`">Go to recommendations</a></div>
-`;
+    <a class="btn-contact-us btn" id="form-button" href="`+ currentTest.targetPage +`">Go to recommendations</a></div>`;
     document.querySelector(".navigation-buttons").remove();
+    
+    
+    fetch("save_data.php", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/x-www-form-urlencoded",
+        },
+        body: new URLSearchParams({
+            test_type: document.title.toLowerCase(),
+            score: totalScore*2.5,
+        }),
+    });
+    
+
 }
 
 //Enables the next button if the user presses any radio button 
