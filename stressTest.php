@@ -80,5 +80,18 @@
       integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
       crossorigin="anonymous"
     ></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $(".blue-button,.discard-button").hover(
+            function(){
+                $(this).css("transform", "scale(1.1)");
+            },
+            function(){
+                $(this).css("transform", "scale(1)");
+            }
+            );
+         });
+    </script>
 </body>
 </html>

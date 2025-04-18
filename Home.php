@@ -12,6 +12,8 @@
     integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
     crossorigin="anonymous"
     >
+
+
     <link rel="stylesheet" href="style.css" >
 </head>
 <body>
@@ -188,6 +190,7 @@
             </ul>
         </div>
     </footer>
+  
 
     <!--<script src="js/script.js"></script>-->
     <script
@@ -200,5 +203,18 @@
     integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
     crossorigin="anonymous"
     ></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $(".testimonial-card").hover(
+            function(){
+                $(this).css("transform", "scale(1.05)");
+            },
+            function(){
+                $(this).css("transform", "scale(1)");
+            }
+            );
+         });
+</script>
 </body>
 </html>
