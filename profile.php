@@ -110,6 +110,10 @@
                     echo "<p><strong>Email:</strong> <span id='userEmail'>{$email}</span></p>";
 
                 ?>
+
+                <form action="logout.php" method="POST">
+                    <button id="logoutBtn" >Log out</button>
+                </form>
                 <!-- Password Change -->
                 <form id="passwordForm">
                     <label for="old-password">Current Password:</label>
