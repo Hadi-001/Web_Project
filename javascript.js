@@ -481,12 +481,16 @@ if(changePassForm){
         }).then(res => res.json()).then(data => {
             if(data.success){
                 curPassInput.setAttribute("class","");
+                passwordInput.value = "";
+                confirmPasswordInput.value = "";
+                passwordInput.setAttribute("class","form-control");
+                confirmPasswordInput.setAttribute("class","form-control");
                 alert("Password changed successfully");
             }else{
                 curPassInput.setAttribute("class","is-invalid");
                 alert("Password is incorrect");
             }
-            alert(data.message);
+            curPassInput.value = "";
         });
     });
 }
@@ -506,39 +510,100 @@ const login_Username = document.getElementById("login-username");
 const login_password =  document.getElementById("login-password");
 const login_error = document.getElementById("login-error");
 
-login_form.addEventListener("submit", function (e) {
-    e.preventDefault(); // prevent normal form submission
-
-    const form = e.target;
-    const formData = new FormData(form);
-
-
-    login_error.textContent = "";
-    // login_Username.classList.remove("invalid");
-    // login_password.classList.remove("invalid");
-
-    fetch("login_action.php", {
-        method: "POST",
-        body: formData
-    })
-    .then(res => res.json())
-    .then(data => {
-        if (data.success) {
-            window.location.href = "Home.php";
-        } else {
-            login_error.textContent = "Invalid username or password.";
-            // login_Username.classList.add("invalid");
-            // login_password.classList.add("invalid");
-            
-        }
-    })
-    .catch(error => {
-        console.error("Login error:", error);
+if(login_form){
+    login_form.addEventListener("submit", function (e) {
+        e.preventDefault(); // prevent normal form submission
+    
+        const form = e.target;
+        const formData = new FormData(form);
+    
+    
+        login_error.textContent = "";
+        // login_Username.classList.remove("invalid");
+        // login_password.classList.remove("invalid");
+    
+        fetch("login_action.php", {
+            method: "POST",
+            body: formData
+        })
+        .then(res => res.json())
+        .then(data => {
+            if (data.success) {
+                window.location.href = "Home.php";
+            } else {
+                login_error.textContent = "Invalid username or password.";
+                // login_Username.classList.add("invalid");
+                // login_password.classList.add("invalid");
+                
+            }
+        })
+        .catch(error => {
+            console.error("Login error:", error);
+        });
     });
-});
+}
+
 
 // ============================================= */
 //            End of Login Section               */
 // ============================================= */
 
 
+// ============================================= */
+//                Canvas Section                 */
+// ============================================= */
+
+
+
+if(document.getElementById('myChart').getContext('2d')){  //If we are in the profile page
+    fetch('get_scores.php')
+    .then(res => res.json())
+    .then(data => {
+        if (!data.success) {
+            alert(data.message);
+            return;
+        }
+
+        const scoresData = data.data;
+
+        const chartConfigs = [
+            { canvasId: 'myChart', type: 'stress', color: 'blue' },
+            { canvasId: 'secondChart', type: 'anxiety', color: 'green' },
+            { canvasId: 'thirdChart', type: 'depression', color: 'purple' }
+        ];
+
+        chartConfigs.forEach(config => {
+            const ctx = document.getElementById(config.canvasId).getContext('2d');
+            new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: scoresData[config.type].dates.map(date => new Date(date).toLocaleDateString()),
+                    datasets: [{
+                        label: `${config.type.charAt(0).toUpperCase() + config.type.slice(1)} Test Score`,
+                        data: scoresData[config.type].scores,
+                        borderColor: config.color,
+                        backgroundColor: `${config.color}20`, // 20 = ~12% opacity
+                        borderWidth: 2,
+                        // fill: true
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: { beginAtZero: true, max:100 }
+                    }
+                }
+            });
+        });
+    })
+    .catch(err => {
+        console.error('Failed to load chart data:', err);
+    });
+
+}
+
+
+// ============================================= */
+//            End of Canvas Section               */
+// ============================================= */
