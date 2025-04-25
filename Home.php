@@ -166,30 +166,61 @@
     <!-- jQuery Script for Hover Effects -->
     <script>
         $(document).ready(function () {
-            // Underline nav links on hover
-            $(".nav-item a").hover(
+            $(".nav-link").hover(
                 function () {
-                    $(this).css({"text-decoration":"underline" ,
-                                 "text-decoration-color":"#FFFFFF",
-                                 "transform":"scale(1.05)"
+                // Create the white progress bar
+                const $bar = $("<span></span>").css({
+                    position: "absolute",
+                    bottom: "0",
+                    left: "0",
+                    height: "3px",
+                    width: "0",
+                    backgroundColor: "#ffffff",
+                    display: "block",
                 });
-                },
-                function () {
-                    $(this).css({"text-decoration": "none",
-                                  "transform": "scale(1)"});
-            
-                }
-            );
 
-            // Scale testimonial cards on hover
-            $(".testimonial-card").hover(
-                function () {
-                    $(this).css("transform", "scale(1.05)");
+                $(this).css({
+                    position: "relative",
+                    transition: "transform 0.3s ease"
+                });
+
+                $(this).append($bar);
+                $bar.animate({ width: "100%" }, 300);
+
+                $(this).css("transform", "scale(1.1)");
                 },
                 function () {
+                    $(this).find("span").stop().animate({ width: "0" }, 200, function () {
+                        $(this).remove();
+                    });
                     $(this).css("transform", "scale(1)");
                 }
             );
+        $(".navbar-brand").hover(
+            function () {
+                $(this).css({
+                    transform: "scale(1.04)", 
+                    color: "white", 
+                    "font-weight": "bold",
+                    transition: "all 0.3s ease",
+                });
+            },
+            function () {
+                $(this).css({
+                    transform: "scale(1)",  
+                    color: "",  
+                    "font-weight": "",
+                    transition: "all 0.3s ease",
+                });
+            });
+            // Scale testimonial cards on hover
+        $(".testimonial-card").hover(
+            function () {
+                $(this).css("transform", "scale(1.05)");
+            },
+            function () {
+                $(this).css("transform", "scale(1)");
+            });
         });
     </script>
 </body>

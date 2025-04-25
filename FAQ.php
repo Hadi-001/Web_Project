@@ -76,74 +76,107 @@
                 </div>
               </nav>
         </div>
-        </header>
+    </header>
         
-        <!-- This section contains the frequently asked questions -->
-        <main class="faq-main-container">
+    <!-- This section contains the frequently asked questions -->
+    <main class="faq-main-container">
 
-            <section class="faq col-xl-5 col-sm-7 col-11">
-                <h1>Frequently Asked Questions</h1>
-                
-                <?php
-                    require_once 'connection.php';
-
-                    $sql = "SELECT question, answer FROM FAQ";
-                    $result = $connection->query($sql);
-
-                    while ($row = $result->fetch_assoc()) {
-                        $question = htmlspecialchars($row['question']);
-                        $answer = $row['answer']; 
-
-                        echo '<div class="faq-item">';
-                        echo '<button class="faq-question">' . $question . '</button>';
-                        echo '<p class="faq-answer">' . $answer . '</p>';
-                        echo '</div>';
-                    }
-                    $connection->close();
-                ?>
-            </section>
+        <section class="faq col-xl-5 col-sm-7 col-11">
+            <h1>Frequently Asked Questions</h1>
             
-            
-        </main>
-        <!-- Footer -->
-        <footer>
-            <div class="footer-container">
-                <!-- Copy Right -->
-                <p>&copy; 2025 Mindful Journaling. All rights reserved.</p>
-                <ul class="footer-menu">
-    
-                    <!-- Terms and Conditions -->
-                    <li><a href="privacy&terms.php">Privacy &amp; Terms</a></li>
-    
-                    <!-- This link takes the user to Frequently Asked Questions page-->
-                    <li><a href="FAQ.php">FAQ</a></li>
-                </ul>
-            </div>
-        </footer>
-        <script src="javascript.js"></script>
-        <!-- JavaScript Dependencies -->
-        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" crossorigin="anonymous"></script>
-            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" crossorigin="anonymous"></script>
-            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+            <?php
+                require_once 'connection.php';
 
-            <!-- jQuery Script for Hover Effects -->
-            <script>
-                $(document).ready(function () {
-                    // Underline nav links on hover
-                    $(".nav-item a").hover(
-                        function () {
-                            $(this).css({"text-decoration":"underline" ,
-                                        "text-decoration-color":"#FFFFFF",
-                                        "transform":"scale(1.05)"
-                        });
-                        },
-                        function () {
-                            $(this).css({"text-decoration": "none",
-                                        "transform": "scale(1)"});
-                    
-                        }
-                    );
+                $sql = "SELECT question, answer FROM FAQ";
+                $result = $connection->query($sql);
+
+                while ($row = $result->fetch_assoc()) {
+                    $question = htmlspecialchars($row['question']);
+                    $answer = $row['answer']; 
+
+                    echo '<div class="faq-item">';
+                    echo '<button class="faq-question">' . $question . '</button>';
+                    echo '<p class="faq-answer">' . $answer . '</p>';
+                    echo '</div>';
+                }
+                $connection->close();
+            ?>
+        </section>
+        
+        
+    </main>
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <!-- Copy Right -->
+            <p>&copy; 2025 Mindful Journaling. All rights reserved.</p>
+            <ul class="footer-menu">
+
+                <!-- Terms and Conditions -->
+                <li><a href="privacy&terms.php">Privacy &amp; Terms</a></li>
+
+                <!-- This link takes the user to Frequently Asked Questions page-->
+                <li><a href="FAQ.php">FAQ</a></li>
+            </ul>
+        </div>
+    </footer>
+    <script src="javascript.js"></script>
+    <!-- JavaScript Dependencies -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+    <!-- jQuery Script for Hover Effects -->
+    <script>
+        $(document).ready(function () {
+            $(".nav-link").hover(
+                function () {
+                // Create the white progress bar
+                const $bar = $("<span></span>").css({
+                    position: "absolute",
+                    bottom: "0",
+                    left: "0",
+                    height: "3px",
+                    width: "0",
+                    backgroundColor: "#ffffff",
+                    display: "block",
                 });
-            </script>
+
+                $(this).css({
+                    position: "relative",
+                    transition: "transform 0.3s ease"
+                });
+
+                $(this).append($bar);
+                $bar.animate({ width: "100%" }, 300);
+
+                $(this).css("transform", "scale(1.1)");
+                },
+                function () {
+                    $(this).find("span").stop().animate({ width: "0" }, 200, function () {
+                        $(this).remove();
+                    });
+                    $(this).css("transform", "scale(1)");
+                }
+            );
+        $(".navbar-brand").hover(
+            function () {
+                $(this).css({
+                    transform: "scale(1.04)", 
+                    color: "white", 
+                    "font-weight": "bold",
+                    transition: "all 0.3s ease",
+                });
+            },
+            function () {
+                $(this).css({
+                    transform: "scale(1)",  
+                    color: "",  
+                    "font-weight": "",
+                    transition: "all 0.3s ease",
+                });
+            });
+        });
+    </script>
 </body>
 </html>
