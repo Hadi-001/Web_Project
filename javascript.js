@@ -12,6 +12,75 @@ document.querySelectorAll(".faq-question").forEach(button => {
 
 
 
+
+
+
+// ============================================= */
+//                 Header Section                */
+// ============================================= */
+
+if(document.getElementsByTagName("nav")){
+    $(document).ready(function () {
+        $(".nav-link").hover(
+            function () {
+            // Create the white progress bar
+            const $bar = $("<span></span>").css({
+                position: "absolute",
+                bottom: "0",
+                left: "0",
+                height: "3px",
+                width: "0",
+                backgroundColor: "#ffffff",
+                display: "block",
+            });
+
+            $(this).css({
+                position: "relative",
+                transition: "transform 0.3s ease"
+            });
+
+            $(this).append($bar);
+            $bar.animate({ width: "100%" }, 300);
+
+            $(this).css("transform", "scale(1.1)");
+            },
+            function () {
+                $(this).find("span").stop().animate({ width: "0" }, 200, function () {
+                    $(this).remove();
+                });
+                $(this).css("transform", "scale(1)");
+            }
+        );
+    $(".navbar-brand").hover(
+        function () {
+            $(this).css({
+                transform: "scale(1.04)", 
+                color: "white", 
+                "font-weight": "bold",
+                transition: "all 0.3s ease",
+            });
+        },
+        function () {
+            $(this).css({
+                transform: "scale(1)",  
+                color: "",  
+                "font-weight": "",
+                transition: "all 0.3s ease",
+            });
+        });
+    });
+}
+
+
+// ============================================= */
+//             End of Header Section             */
+// ============================================= */
+
+
+
+
+
+
 // ============================================= */
 //          stressRecommendation Section         */
 // ============================================= */
@@ -252,8 +321,26 @@ if (page.includes("anxiety")) currentTest = anxietyTest;
 else if (page.includes("stress")) currentTest = stressTest;
 else currentTest = depressionTest; 
 
-if (questionText)updateQuestion(); // If questionText is not null then this is definitely one of the test pages so we cal updateQuestion()
+if (questionText){
+    updateQuestion(); // If questionText is not null then this is definitely one of the test pages so we cal updateQuestion()
 
+    $(document).ready(function () {
+        $(".blue-button,.discard-button").hover(
+                    function(){
+                        $(this).css("transform", "scale(1.1)");
+                    },
+                    function(){
+                        $(this).css("transform", "scale(1)");
+                    }
+                    );
+
+        $(".response-container").on("mouseenter", function () {
+                    $(this).css("transform", "scale(0.95)");
+                }).on("mouseleave", function () {
+                    $(this).css("transform", "scale(1)");
+                });
+    });
+}
 // ============================================= */
 //             End of test Section               */
 // ============================================= */
@@ -554,8 +641,9 @@ if(login_form){
 // ============================================= */
 
 
+// let chart = document.getElementById('myChart');
 
-if(document.getElementById('myChart').getContext('2d')){  //If we are in the profile page
+if(document.getElementById('myChart')){  //If we are in the profile page 
     fetch('get_scores.php')
     .then(res => res.json())
     .then(data => {
@@ -606,4 +694,28 @@ if(document.getElementById('myChart').getContext('2d')){  //If we are in the pro
 
 // ============================================= */
 //            End of Canvas Section               */
+// ============================================= */
+
+
+
+// ============================================= */
+//                  Home Section                 */
+// ============================================= */
+
+
+
+if(document.getElementsByClassName("testimonials")){
+    $(document).ready(function () {
+        $(".testimonial-card").hover(
+            function () {
+                $(this).css("transform", "scale(1.05)");
+            },
+            function () {
+                $(this).css("transform", "scale(1)");
+            });
+        });
+}
+
+// ============================================= */
+//             End of Home Section               */
 // ============================================= */
