@@ -113,7 +113,7 @@
                 <!-- Password Change -->
                 <form id="passwordForm">
                     <label for="old-password">Current Password:</label>
-                    <input type="password" id="old-password" placeholder="Enter current password" required>
+                    <input type="password" id="old-password" class="form-control" placeholder="Enter current password" required>
                     <div class="invalid-feedback" id="invalid-pass-change-msg">
                         Wrong password
                     </div>
@@ -168,79 +168,8 @@
         </div>
     </footer>
 
-    <!-- The bellow charts are developed by ChatGpt Their content will change in the backend phase -->
-    <!-- This scripting is for the charts -->
-    <script>
-        // First Chart (Mood Level)
-        const ctx1 = document.getElementById('myChart').getContext('2d');
-        new Chart(ctx1, {
-            type: 'line',
-            data: {
-                labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
-                datasets: [{
-                    label: 'Stress Test Score',
-                    data: [3, 4, 5, 3, 4, 6, 5],
-                    borderColor: 'blue',
-                    borderWidth: 2
-                }]
-            },
-            options: {
-                responsive: true,
-                maintainAspectRatio: false,
-                scales: {
-                    y: { beginAtZero: true }
-                }
-            }
-        });
-
-    // Second Chart (Activity Level)
-    const ctx2 = document.getElementById('secondChart').getContext('2d');
-    new Chart(ctx2, {
-        type: 'line',
-        data: {
-            labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
-            datasets: [{
-                label: 'Anxiety Test Score',
-                data: [2, 3, 4, 2, 5, 6, 7],
-                backgroundColor: 'green',
-                borderColor: 'green',
-                borderWidth: 2
-            }]
-        },
-        options: {
-            responsive: true,
-            maintainAspectRatio: false,
-            scales: {
-                y: { beginAtZero: true }
-            }
-        }
-    });
-
-    // Third Chart (Sleep Hours)
-    const ctx3 = document.getElementById('thirdChart').getContext('2d');
-    new Chart(ctx3, {
-        type: 'line',
-        data: {
-            labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
-            datasets: [{
-                label: 'Depression Test Score',
-                data: [7, 6, 8, 5, 7, 6, 8],
-                borderColor: 'purple',
-                borderWidth: 2,
-                backgroundColor: 'rgba(128,0,128,0.2)'
-            }]
-        },
-        options: {
-            responsive: true,
-            maintainAspectRatio: false,
-            scales: {
-                y: { beginAtZero: true }
-            }
-        }
-    });
-
-    </script>
-
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
     <script src="javascript.js"></script>
     <script
     src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
