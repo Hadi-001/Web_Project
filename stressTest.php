@@ -67,31 +67,31 @@
         <a class="discard-button" id="discard-button" href="Home.php">Discard test</a>
         <button class="blue-button" id="next-button" disabled>Next</button>
     </div>
-
     <script src="javascript.js"></script>
 
-    <script
-      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
-      integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
-      integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
-      crossorigin="anonymous"
-    ></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-    <script>
-        $(document).ready(function(){
-            $(".blue-button,.discard-button").hover(
-            function(){
-                $(this).css("transform", "scale(1.1)");
-            },
-            function(){
-                $(this).css("transform", "scale(1)");
-            }
-            );
-         });
-    </script>
+     <!-- JavaScript Dependencies -->
+     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" crossorigin="anonymous"></script>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" crossorigin="anonymous"></script>
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+            <!-- jQuery Script for Hover Effects -->
+            <script>
+                $(document).ready(function () {
+                    $(".blue-button,.discard-button").hover(
+                                function(){
+                                    $(this).css("transform", "scale(1.1)");
+                                },
+                                function(){
+                                    $(this).css("transform", "scale(1)");
+                                }
+                                );
+
+                    $(".response-container").on("mouseenter", function () {
+                                $(this).css("transform", "scale(0.95)");
+                            }).on("mouseleave", function () {
+                                $(this).css("transform", "scale(1)");
+                            });
+                });
+            </script>
 </body>
 </html>

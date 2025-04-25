@@ -944,6 +944,8 @@ will have the bellow format
 
 #option1, #option2, #option3, #option4{
     display: none;
+    transition: transform 0.2s ease-in-out;
+
 }
 
 input[type="radio"]:checked + .custom-radio-label {
@@ -967,6 +969,9 @@ input[type="radio"]:checked + .custom-radio-label {
     padding: 3%;
     border-radius: 15px;
     position: relative;
+}
+.response-container{
+    transition: transform 0.09s ease-in-out;
 }
 
 .progress-wrapper {
@@ -995,7 +1000,6 @@ input[type="radio"]:checked + .custom-radio-label {
     background-color: #0d6efd;
     transition: transform 0.2s ease-in-out;
 }
-
 .navigation-buttons > .discard-button{
     background-color: red;
     padding: 2px 4px ;
