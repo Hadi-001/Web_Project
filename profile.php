@@ -185,6 +185,60 @@
     integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
     crossorigin="anonymous"
     ></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+    <!-- jQuery Script for Hover Effects -->
+    <script>
+        $(document).ready(function () {
+            $(".nav-link").hover(
+                function () {
+                // Create the white progress bar
+                const $bar = $("<span></span>").css({
+                    position: "absolute",
+                    bottom: "0",
+                    left: "0",
+                    height: "3px",
+                    width: "0",
+                    backgroundColor: "#ffffff",
+                    display: "block",
+                });
+
+                $(this).css({
+                    position: "relative",
+                    transition: "transform 0.3s ease"
+                });
+
+                $(this).append($bar);
+                $bar.animate({ width: "100%" }, 300);
+
+                $(this).css("transform", "scale(1.1)");
+                },
+                function () {
+                    $(this).find("span").stop().animate({ width: "0" }, 200, function () {
+                        $(this).remove();
+                    });
+                    $(this).css("transform", "scale(1)");
+                }
+            );
+        $(".navbar-brand").hover(
+            function () {
+                $(this).css({
+                    transform: "scale(1.04)", 
+                    color: "white", 
+                    "font-weight": "bold",
+                    transition: "all 0.3s ease",
+                });
+            },
+            function () {
+                $(this).css({
+                    transform: "scale(1)",  
+                    color: "",  
+                    "font-weight": "",
+                    transition: "all 0.3s ease",
+                });
+            });
+        });
+    </script>
 
 </body>
 </html>
