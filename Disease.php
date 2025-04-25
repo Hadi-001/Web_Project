@@ -95,7 +95,7 @@
           echo '<a href="' . htmlspecialchars($row['link']) . '" class="btn">Learn More</a>';
           echo '</section><br>';
       }
-      connection->close();
+      $connection->close();
     ?>
 
   </main>
