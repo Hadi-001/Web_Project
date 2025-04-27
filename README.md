@@ -183,7 +183,118 @@ This page provides **tips** for managing **depression**, along with an **inspira
 
 - Uses **header (nav-bar)** and **footer** as described earlier.
 
----
+*Phase 2 Documentation*
+
+## Environment Setup  
+- **XAMPP Installation**: Configured Apache & MySQL services locally.  
+- **Project Directory**: Placed PHP, HTML, JS, CSS under `htdocs/Web_Project`.  
+- **Database Configuration**: Created `web_project_db` in phpMyAdmin.  
+
+## MySQL Database Schema  
+- **ACCOUNT**: Stores user credentials and profiles.  
+  - `id` (PK), `username` (UNIQUE), `password`, `firstname`, `lastname`, `email` (UNIQUE).  
+- **ARTICLE**: Holds articles metadata.  
+  - `id` (PK), `article_title`, `author_image`, `article_description`, `article_link`.  
+- **FAQ**: Contains question–answer pairs.  
+  - `id` (PK), `question`, `answer`.  
+- **DISEASE**: Lists diseases for symptom pages.  
+  - `id` (PK), `name`, `description`, `link`.  
+- **TEST_SCORE**: Records user test results.  
+  - `test_id` (PK), `user_id` (FK→ACCOUNT.id), `score`, `test_type`, `test_date`.  
+- **FEEDBACK**: Captures user messages.  
+  - `id` (PK), `username`, `email`, `message`.  
+
+## Back-End Implementation (PHP)  
+- **connection.php**: Central MySQL connection using `mysqli`; reads host, user, pass, db name; dies on connection error.  
+- **index.php**: Renders login form; includes client-side placeholders; posts to `login_action.php`.  
+- **login_action.php**: Accepts POST `{username, password}`, uses prepared statement `SELECT * FROM ACCOUNT WHERE username=?`, verifies with `password_verify()`, on success calls `session_start()`, sets `$_SESSION['user_id']`, returns JSON `{success:true}`, else `{success:false}`.  
+- **signup.php**: Handles registration POST `{firstname, lastname, username, email, password}`, trims and sanitizes inputs, hashes password via `password_hash()`, inserts into `ACCOUNT` with prepared statement, redirects to login or echoes error.  
+- **logout.php**: Calls `session_start()`, uses `unset($_SESSION['user_id'])` to log out the user, then sends `header("Location: index.php")` and exits.
+- **check_email_username.php**: AJAX endpoint; receives POST `{username, email}`, queries `ACCOUNT` with `WHERE username=? OR email=?`, builds JSON flags `{username:bool, email:bool}` indicating availability.  
+- **change_password.php**: AJAX endpoint; parses JSON body with `cur_pass` and `new_pass`, fetches stored hash, verifies current via `password_verify()`, hashes new password, updates `ACCOUNT` record, returns JSON `{success:true/false}`.  
+- **save_data.php**: AJAX handler for tests; expects POST `{test_type, score}`, extracts first word of `test_type`, casts score to double, prepares `INSERT INTO TEST_SCORE (user_id, score, test_type, test_date)`, uses `date("Y-m-d H:i:s")`.  
+- **get_scores.php**: Fetches last 7 records per test type (`stress`, `anxiety`, `depression`) for `$_SESSION['user_id']`, returns JSON `{success:true, data:{stress:{scores,dates},...}}`.  
+- **submit_feedback.php**: Processes `contactUs.html` POST `{name, email, message}`, sanitizes and validates email, inserts into `FEEDBACK` via prepared statement, redirects back or echoes confirmation.  
+- **profile.php**: Requires session, queries `ACCOUNT` for user fields, safely echoes name, username, email; renders change-password form wired to `change_password.php`.  
+
+##  Front-End Improvement & Additional Features  
+- **Dynamic Content Rendering**: Articles, FAQs, diseases, and profile details are generated via PHP loops and fetched from MySQL.  
+- **Progress Tracker**: Three Chart.js line charts pull JSON from `get_scores.php` to visualize recent test performance.  
+- **Form Validations**: Sign-up and password-change inputs are validated in-browser using JavaScript regex patterns and Bootstrap validation classes.  
+- **AJAX-powered Login & Validation**: Login, sign-up availability checks, and password changes leverage fetch API for asynchronous interaction.  
+- **Responsive & UX Tweaks**: Navbar link margins adjust at breakpoints; hover scale animations enhance feedback.  
+
+## Integration of jQuery and AJAX  
+- **jQuery Animations & DOM Enhancements**:  
+  - **Nav-link Hover**: On `.nav-link:hover`, append a white `<span>` progress bar animated to full width over 300ms and scale link to 1.1×; on mouseout, reverse animation and remove span.  
+  - **Navbar-brand Hover**: Scale logo `.navbar-brand` to 1.04×, change text color to white, set `font-weight:bold`, transition `0.3s`; revert on mouseout.  
+  - **Test Button Hover**: Scale `.blue-button` and `.discard-button` to 1.1× on hover, reset on leave.  
+  - **Response Container Hover**: Scale `.response-container` to 0.95× on `mouseenter`, reset on `mouseleave`.  
+  - **Testimonial Card Hover**: Scale `.testimonial-card` to 1.05× on hover, revert on mouseout.  
+- **AJAX (fetch API)**:  
+  - **Sign-Up**: `check_email_username.php` for real-time username/email availability validation.  
+  - **Login**: Posts to `login_action.php`, handles JSON `{success}` to redirect or show error.  
+  - **Password Change**: Sends JSON to `change_password.php`, processes `{success}` response to alert user.  
+  - **Test Scores**: Submits results to `save_data.php` immediately after test completion.  
+  - **Chart Data**: GETs from `get_scores.php` to feed Chart.js datasets.  
+
+##  PHP Scripting  
+... Front‑End Improvement & Additional Features  
+- **Dynamic Content Rendering**:  
+  - Articles, FAQs, diseases, profile details loaded via PHP.  
+- **Progress Tracker**:  
+  - Three Chart.js line charts pulling JSON from `get_scores.php`.  
+- **Interactive Elements**:  
+  - FAQ accordion toggles via vanilla JS.  
+  - Breathing exercise with JS timers.  
+- **Form Validations**:  
+  - Sign‑up and password‑change fields validated with JS and Bootstrap classes.  
+- **AJAX‑powered Login & Validation**:  
+  - Login form submits via fetch to `login_action.php`.  
+- **Responsive & UX Tweaks**:  
+  - Adjusted nav‑link margins; hover & scale effects with jQuery.  
+
+##  Integration of jQuery and AJAX  
+- **jQuery Usage**:  
+  - DOM ready handlers for hover animations on navigation, buttons, cards.  
+- **AJAX (fetch API)**:  
+  - **Sign‑Up**: validate username/email availability via `check_email_username.php`.  
+  - **Login**: send credentials to `login_action.php`, handle JSON response.  
+  - **Password Change**: submit to `change_password.php`, show success/failure.  
+  - **Test Scores**: real‑time insert via `save_data.php` upon test completion.  
+  - **Chart Data**: GET request to `get_scores.php` to plot recent scores.  
+
+##  PHP Scripting  
+Implemented the following PHP pages interacting with front-end and MySQL:  
+- `connection.php`  
+- `index.php` (login form)  
+- `login_action.php` (handles login via AJAX)  
+- `signup.php` (registration form handler)  
+- `logout.php` (session termination and redirect)  
+- `check_email_username.php` (AJAX validation for sign-up)  
+- `change_password.php` (current password verification and update)  
+- `save_data.php` (inserts test scores via AJAX)  
+- `get_scores.php` (retrieves recent test scores in JSON)  
+- `submit_feedback.php` (feedback form handler inserting into FEEDBACK)  
+- `profile.php` (renders user profile details and change-password form)  
+
+##  Documentation & README Quality Documentation & README Quality  
+- **README.md** includes:  
+  - **Front-End Changes**: bulleted list of HTML/CSS/JS enhancements.  
+  - **AJAX & jQuery Usage**: pages and endpoints documented in bullets.  
+  - **Back-End Scripts**: list of PHP files and their purposes.  
+  - **Database Schema**: tables & relationships briefly described.  
+  - **Setup Instructions**: how to install XAMPP, import `.sql`, configure Apache.  
+  - **Resource References**:  
+    - [PHP Manual](https://www.php.net/manual/)  
+    - [MySQL Documentation](https://dev.mysql.com/doc/)  
+    - [Bootstrap 5 Docs](https://getbootstrap.com/docs/5.0/)  
+    - [Chart.js Guide](https://www.chartjs.org/docs/latest/)  
+    - [MDN Web Docs for fetch API](https://developer.mozilla.org/)  
+- **Code Comments**: each PHP/JS file contains header comments and inline notes.  
+
+---  
+*End of Phase 2 Documentation*
 
 ## Live Demo
 
